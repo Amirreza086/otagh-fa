@@ -66,7 +66,7 @@ const LobbyMenu = forwardRef<HTMLDivElement, LobbyMenuProps>(
             disabled={!canInvite}
           >
             <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-              Invite
+              دعوت
             </Text>
           </MenuItem>
           <MenuItem
@@ -76,7 +76,7 @@ const LobbyMenu = forwardRef<HTMLDivElement, LobbyMenuProps>(
             radii="300"
           >
             <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-              Space Settings
+              تنظیمات فضا
             </Text>
           </MenuItem>
         </Box>
@@ -95,7 +95,7 @@ const LobbyMenu = forwardRef<HTMLDivElement, LobbyMenuProps>(
                   aria-pressed={promptLeave}
                 >
                   <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-                    Leave Space
+                    ترک کردن فضا
                   </Text>
                 </MenuItem>
                 {promptLeave && (
@@ -159,7 +159,7 @@ export function LobbyHeader({ showProfile, powerLevels }: LobbyHeaderProps) {
             offset={4}
             tooltip={
               <Tooltip>
-                <Text>Members</Text>
+                <Text>کاربران</Text>
               </Tooltip>
             }
           >
@@ -175,7 +175,7 @@ export function LobbyHeader({ showProfile, powerLevels }: LobbyHeaderProps) {
             offset={4}
             tooltip={
               <Tooltip>
-                <Text>More Options</Text>
+                <Text>موارد بیشتر</Text>
               </Tooltip>
             }
           >
