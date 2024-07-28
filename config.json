@@ -1,0 +1,12 @@
+{
+  "defaultHomeserver": 0,
+  "homeserverList": [
+    "xmr.se"
+  ],
+  "allowCustomHomeservers": true,
+
+  "hashRouter": {
+    "enabled": true,
+    "basename": "/"
+  }
+}
