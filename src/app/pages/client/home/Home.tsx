@@ -79,7 +79,7 @@ const HomeMenu = forwardRef<HTMLDivElement, HomeMenuProps>(({ requestClose }, re
           aria-disabled={!unread}
         >
           <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-            Mark as Read
+            علامت زدن به عنوان خوانده شده
           </Text>
         </MenuItem>
         <MenuItem
@@ -89,7 +89,7 @@ const HomeMenu = forwardRef<HTMLDivElement, HomeMenuProps>(({ requestClose }, re
           after={<Icon size="100" src={Icons.Link} />}
         >
           <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-            Join with Address
+            پیوستن به این آدرس
           </Text>
         </MenuItem>
       </Box>
@@ -114,7 +114,7 @@ function HomeHeader() {
         <Box alignItems="Center" grow="Yes" gap="300">
           <Box grow="Yes">
             <Text size="H4" truncate>
-              Home
+              خانه
             </Text>
           </Box>
           <Box>
@@ -158,19 +158,19 @@ function HomeEmpty() {
         icon={<Icon size="600" src={Icons.Hash} />}
         title={
           <Text size="H5" align="Center">
-            No Rooms
+            بدون اتاقی
           </Text>
         }
         content={
           <Text size="T300" align="Center">
-            You do not have any rooms yet.
+            شما هنوز اتاق ندارید
           </Text>
         }
         options={
           <>
             <Button onClick={() => openCreateRoom()} variant="Secondary" size="300">
               <Text size="B300" truncate>
-                Create Room
+                ساخت اتاق
               </Text>
             </Button>
             <Button
@@ -180,7 +180,7 @@ function HomeEmpty() {
               size="300"
             >
               <Text size="B300" truncate>
-                Explore Community Rooms
+                اتاق‌های سرور را کاوش کنید
               </Text>
             </Button>
           </>
@@ -246,7 +246,7 @@ export function Home() {
                       </Avatar>
                       <Box as="span" grow="Yes">
                         <Text as="span" size="Inherit" truncate>
-                          Create Room
+                          ساخت اتاق
                         </Text>
                       </Box>
                     </Box>
@@ -262,7 +262,7 @@ export function Home() {
                       </Avatar>
                       <Box as="span" grow="Yes">
                         <Text as="span" size="Inherit" truncate>
-                          Join with Address
+                          پیوستن به این آدرس
                         </Text>
                       </Box>
                     </Box>
@@ -278,7 +278,7 @@ export function Home() {
                       </Avatar>
                       <Box as="span" grow="Yes">
                         <Text as="span" size="Inherit" truncate>
-                          Message Search
+                          جست و جو پیام
                         </Text>
                       </Box>
                     </Box>
@@ -293,7 +293,7 @@ export function Home() {
                   data-category-id={DEFAULT_CATEGORY_ID}
                   onClick={handleCategoryClick}
                 >
-                  Rooms
+                  اتاق ها
                 </RoomNavCategoryButton>
               </NavCategoryHeader>
               <div
