@@ -47,7 +47,7 @@ export function UIAFlowOverlay({
             <TooltipProvider
               tooltip={
                 <Tooltip variant="Critical">
-                  <Text>Exit</Text>
+                  <Text>خروج</Text>
                 </Tooltip>
               }
               position="Top"
