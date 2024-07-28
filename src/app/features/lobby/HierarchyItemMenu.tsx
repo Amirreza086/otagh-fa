@@ -65,7 +65,7 @@ function SuggestMenuItem({
       disabled={toggleState.status === AsyncStatus.Loading}
     >
       <Text as="span" size="T300" truncate>
-        {content.suggested ? 'Unset Suggested' : 'Set Suggested'}
+        {content.suggested ? 'تنظیم نشده پیشنهادی' : 'تنظیم شده پیشنهادی'}
       </Text>
     </MenuItem>
   );
@@ -109,7 +109,7 @@ function RemoveMenuItem({
       disabled={removeState.status === AsyncStatus.Loading}
     >
       <Text as="span" size="T300" truncate>
-        Remove
+        پاک کردن
       </Text>
     </MenuItem>
   );
@@ -139,7 +139,7 @@ function InviteMenuItem({
       disabled={disabled}
     >
       <Text as="span" size="T300" truncate>
-        Invite
+        دعوت
       </Text>
     </MenuItem>
   );
@@ -166,7 +166,7 @@ function SettingsMenuItem({
   return (
     <MenuItem onClick={handleSettings} size="300" radii="300" disabled={disabled}>
       <Text as="span" size="T300" truncate>
-        Settings
+        تنظیمات
       </Text>
     </MenuItem>
   );
@@ -244,7 +244,7 @@ export function HierarchyItemMenu({
                         }}
                       >
                         <Text as="span" size="T300" truncate>
-                          {pinned ? 'Unpin from Sidebar' : 'Pin to Sidebar'}
+                          {pinned ? 'پین کردن در نوار کناری' : 'پین به نوار کناری'}
                         </Text>
                       </MenuItem>
                     )}
@@ -267,7 +267,7 @@ export function HierarchyItemMenu({
                             aria-pressed={promptLeave}
                           >
                             <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-                              Leave
+                              ترک کردن
                             </Text>
                           </MenuItem>
                           {promptLeave &&
