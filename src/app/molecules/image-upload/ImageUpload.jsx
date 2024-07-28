@@ -60,7 +60,7 @@ function ImageUpload({
         <div className={`img-upload__process ${uploadPromise === null ? ' img-upload__process--stopped' : ''}`}>
           {uploadPromise === null && (
             size === 'large'
-              ? <Text variant="b3" weight="bold">Upload</Text>
+              ? <Text variant="b3" weight="bold">آپلود</Text>
               : <RawIcon src={PlusIC} color="white" />
           )}
           {uploadPromise !== null && <Spinner size="small" />}
@@ -72,7 +72,7 @@ function ImageUpload({
           type="button"
           onClick={uploadPromise === null ? onRequestRemove : cancelUpload}
         >
-          <Text variant="b3">{uploadPromise ? 'Cancel' : 'Remove'}</Text>
+          <Text variant="b3">{uploadPromise ? 'لغو' : 'پاک کردن'}</Text>
         </button>
       )}
       <input onChange={uploadImage} style={{ display: 'none' }} ref={uploadImageRef} type="file" accept="image/*" />
