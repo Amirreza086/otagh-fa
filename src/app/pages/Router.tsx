@@ -259,7 +259,7 @@ export const createRouter = (clientConfig: ClientConfig, screenSize: ScreenSize)
           <Route path={_INVITES_PATH} element={<Invites />} />
         </Route>
       </Route>
-      <Route path="/*" element={<p>Page not found</p>} />
+      <Route path="/*" element={<p>صفحه پیدا نشد.</p>} />
     </Route>
   );
 
