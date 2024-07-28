@@ -69,7 +69,7 @@ export function ReactionTooltipMsg({ room, reaction, events }: ReactionTooltipMs
         <>
           <b>{names[0]}</b>
           <Text as="span" size="Inherit" priority="300">
-            {' and '}
+            {' و '}
           </Text>
           <b>{names[1]}</b>
         </>
@@ -82,7 +82,7 @@ export function ReactionTooltipMsg({ room, reaction, events }: ReactionTooltipMs
           </Text>
           <b>{names[1]}</b>
           <Text as="span" size="Inherit" priority="300">
-            {' and '}
+            {' و '}
           </Text>
           <b>{names[2]}</b>
         </>
@@ -99,13 +99,13 @@ export function ReactionTooltipMsg({ room, reaction, events }: ReactionTooltipMs
           </Text>
           <b>{names[2]}</b>
           <Text as="span" size="Inherit" priority="300">
-            {' and '}
+            {' و '}
           </Text>
-          <b>{names.length - 3} others</b>
+          <b>{names.length - 3} سایر</b>
         </>
       )}
       <Text as="span" size="Inherit" priority="300">
-        {' reacted with '}
+        {' واکنش به '}
       </Text>
       :<b>{shortcode}</b>:
     </>
