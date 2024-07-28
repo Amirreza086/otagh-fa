@@ -49,7 +49,7 @@ const DirectMenu = forwardRef<HTMLDivElement, DirectMenuProps>(({ requestClose }
           aria-disabled={!unread}
         >
           <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-            Mark as Read
+          علامت زدن به عنوان خوانده شده
           </Text>
         </MenuItem>
       </Box>
