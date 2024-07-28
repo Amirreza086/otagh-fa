@@ -91,7 +91,7 @@ function RoomProfile({ roomId }) {
         if (newTopic !== roomTopic) {
           if (isMountStore.getItem()) {
             setStatus({
-              msg: 'Saving room topic...',
+              msg: 'در حال ذخیره کردن موضوع اتاق...',
               type: cons.status.IN_FLIGHT,
             });
           }
@@ -100,13 +100,13 @@ function RoomProfile({ roomId }) {
       }
       if (!isMountStore.getItem()) return;
       setStatus({
-        msg: 'Saved successfully',
+        msg: 'با موفقیت ذخیره شد.',
         type: cons.status.SUCCESS,
       });
     } catch (err) {
       if (!isMountStore.getItem()) return;
       setStatus({
-        msg: err.message || 'Unable to save.',
+        msg: err.message || 'ذخیره نشد.',
         type: cons.status.ERROR,
       });
     }
@@ -123,9 +123,9 @@ function RoomProfile({ roomId }) {
   const handleAvatarUpload = async (url) => {
     if (url === null) {
       const isConfirmed = await confirmDialog(
-        'Remove avatar',
-        'Are you sure that you want to remove room avatar?',
-        'Remove',
+        'پاک کردن آواتار',
+        'آیا مطمئن هستید که می‌خواهید آواتار اتاق را حذف کنید؟',
+        'پاک کردن',
         'caution'
       );
       if (isConfirmed) {
@@ -173,7 +173,7 @@ function RoomProfile({ roomId }) {
       {status.type !== cons.status.IN_FLIGHT && (
         <div>
           <Button type="submit" variant="primary">
-            Save
+            ذخیره کردن
           </Button>
           <Button onClick={handleCancelEditing}>Cancel</Button>
         </div>
