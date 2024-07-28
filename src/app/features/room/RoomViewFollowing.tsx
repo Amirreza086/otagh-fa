@@ -79,7 +79,7 @@ export const RoomViewFollowing = as<'div', RoomViewFollowingProps>(
                   <>
                     <b>{names[0]}</b>
                     <Text as="span" size="Inherit" priority="300">
-                      {' is following the conversation.'}
+                      {' گفتگو را دنبال می کند.'}
                     </Text>
                   </>
                 )}
@@ -87,11 +87,11 @@ export const RoomViewFollowing = as<'div', RoomViewFollowingProps>(
                   <>
                     <b>{names[0]}</b>
                     <Text as="span" size="Inherit" priority="300">
-                      {' and '}
+                      {' و '}
                     </Text>
                     <b>{names[1]}</b>
                     <Text as="span" size="Inherit" priority="300">
-                      {' are following the conversation.'}
+                      {' گفتگو را دنبال می کنند.'}
                     </Text>
                   </>
                 )}
@@ -103,11 +103,11 @@ export const RoomViewFollowing = as<'div', RoomViewFollowingProps>(
                     </Text>
                     <b>{names[1]}</b>
                     <Text as="span" size="Inherit" priority="300">
-                      {' and '}
+                      {' و '}
                     </Text>
                     <b>{names[2]}</b>
                     <Text as="span" size="Inherit" priority="300">
-                      {' are following the conversation.'}
+                      {' گفتگو را دنبال می کنند.'}
                     </Text>
                   </>
                 )}
@@ -123,11 +123,11 @@ export const RoomViewFollowing = as<'div', RoomViewFollowingProps>(
                     </Text>
                     <b>{names[2]}</b>
                     <Text as="span" size="Inherit" priority="300">
-                      {' and '}
+                      {' و '}
                     </Text>
                     <b>{names.length - 3} others</b>
                     <Text as="span" size="Inherit" priority="300">
-                      {' are following the conversation.'}
+                      {' گفتگو را دنبال می کنند.'}
                     </Text>
                   </>
                 )}
