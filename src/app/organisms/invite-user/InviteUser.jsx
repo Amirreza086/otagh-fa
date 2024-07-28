@@ -92,13 +92,13 @@ function InviteUser({ isOpen, roomId, searchTerm, onRequestClose }) {
           limit: 20,
         });
         if (result.results.length === 0) {
-          updateSearchQuery({ error: `No matches found for "${inputUsername}"!` });
+          updateSearchQuery({ error: `هیچ منطبقی برای پیدا نشد "${inputUsername}"!` });
           updateIsSearching(false);
           return;
         }
         updateUsers(result.results);
       } catch (e) {
-        updateSearchQuery({ error: 'Something went wrong!' });
+        updateSearchQuery({ error: 'مشکلی پیش آمد!' });
       }
     }
     updateIsSearching(false);
@@ -145,7 +145,7 @@ function InviteUser({ isOpen, roomId, searchTerm, onRequestClose }) {
     } catch (e) {
       deleteUserFromProc(userId);
       if (typeof e.message === 'string') procUserError.set(userId, e.message);
-      else procUserError.set(userId, 'Something went wrong!');
+      else procUserError.set(userId, 'مشکلی پیش آمد!');
       updateUserProcError(getMapCopy(procUserError));
     }
   }
@@ -173,7 +173,7 @@ function InviteUser({ isOpen, roomId, searchTerm, onRequestClose }) {
               onRequestClose();
             }}
           >
-            Open
+            بازکردن
           </Button>
         );
       }
@@ -186,22 +186,22 @@ function InviteUser({ isOpen, roomId, searchTerm, onRequestClose }) {
           const userMembership = member.membership;
           switch (userMembership) {
             case 'join':
-              return messageJSX('Already joined', true);
+              return messageJSX('قبلاً ملحق شده است', true);
             case 'invite':
-              return messageJSX('Already Invited', true);
+              return messageJSX('قبلا دعوت شده است', true);
             case 'ban':
-              return messageJSX('Banned', false);
+              return messageJSX('ممنوع شده', false);
             default:
           }
         }
       }
       return typeof roomId === 'string' ? (
         <Button onClick={() => inviteToRoom(userId)} variant="primary">
-          Invite
+          دعوت
         </Button>
       ) : (
         <Button onClick={() => createDM(userId)} variant="primary">
-          Message
+          پیام
         </Button>
       );
     };
@@ -265,18 +265,18 @@ function InviteUser({ isOpen, roomId, searchTerm, onRequestClose }) {
         >
           <Input value={searchTerm} forwardRef={usernameRef} label="Name or userId" />
           <Button disabled={isSearching} iconSrc={UserIC} variant="primary" type="submit">
-            Search
+            جست و جو
           </Button>
         </form>
         <div className="invite-user__search-status">
           {typeof searchQuery.username !== 'undefined' && isSearching && (
             <div className="flex--center">
               <Spinner size="small" />
-              <Text variant="b2">{`Searching for user "${searchQuery.username}"...`}</Text>
+              <Text variant="b2">{`در حال جست و جوی کاربر "${searchQuery.username}"...`}</Text>
             </div>
           )}
           {typeof searchQuery.username !== 'undefined' && !isSearching && (
-            <Text variant="b2">{`Search result for user "${searchQuery.username}"`}</Text>
+            <Text variant="b2">{`نتیجه جستجو برای کاربر "${searchQuery.username}"`}</Text>
           )}
           {searchQuery.error && (
             <Text className="invite-user__search-error" variant="b2">
