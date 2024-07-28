@@ -145,7 +145,7 @@ export const PdfViewer = as<'div', PdfViewerProps>(
               radii="300"
               before={<Icon size="50" src={Icons.Download} />}
             >
-              <Text size="B300">Download</Text>
+              <Text size="B300">دانلود</Text>
             </Chip>
           </Box>
         </Header>
@@ -153,7 +153,7 @@ export const PdfViewer = as<'div', PdfViewerProps>(
           {isLoading && <Spinner variant="Secondary" size="600" />}
           {isError && (
             <>
-              <Text>Failed to load PDF</Text>
+              <Text>مشکل در بارگزاری پی دی اف</Text>
               <Button
                 variant="Critical"
                 fill="Soft"
@@ -162,7 +162,7 @@ export const PdfViewer = as<'div', PdfViewerProps>(
                 before={<Icon src={Icons.Warning} size="50" />}
                 onClick={loadPdfJS}
               >
-                <Text size="B300">Retry</Text>
+                <Text size="B300">تلاش دوباره</Text>
               </Button>
             </>
           )}
@@ -189,7 +189,7 @@ export const PdfViewer = as<'div', PdfViewerProps>(
               onClick={handlePrevPage}
               aria-disabled={pageNo <= 1}
             >
-              <Text size="B300">Previous</Text>
+              <Text size="B300">پیش نمایش</Text>
             </Chip>
             <Box grow="Yes" justifyContent="Center" alignItems="Center" gap="200">
               <PopOut
@@ -227,7 +227,7 @@ export const PdfViewer = as<'div', PdfViewerProps>(
                           aria-label="Page Number"
                         />
                         <Button type="submit" size="300" variant="Primary" radii="300">
-                          <Text size="B300">Jump To Page</Text>
+                          <Text size="B300">پرش به صفحه</Text>
                         </Button>
                       </Box>
                     </Menu>
@@ -251,7 +251,7 @@ export const PdfViewer = as<'div', PdfViewerProps>(
               onClick={handleNextPage}
               aria-disabled={pageNo >= docState.data.numPages}
             >
-              <Text size="B300">Next</Text>
+              <Text size="B300">بعدی</Text>
             </Chip>
           </Header>
         )}
