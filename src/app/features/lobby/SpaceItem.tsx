@@ -86,15 +86,15 @@ function UnknownPrivateSpaceProfile({
     >
       <Box alignItems="Center" gap="200">
         <Text size="H4" truncate>
-          {name || 'Unknown'}
+          {name || 'نامشخص'}
         </Text>
 
         <Badge variant="Secondary" fill="Soft" radii="Pill" outlined>
-          <Text size="L400">Private Space</Text>
+          <Text size="L400">فضای خصوصی</Text>
         </Badge>
         {suggested && (
           <Badge variant="Success" fill="Soft" radii="Pill" outlined>
-            <Text size="L400">Suggested</Text>
+            <Text size="L400">پیشنهاد شده</Text>
           </Badge>
         )}
       </Box>
@@ -150,11 +150,11 @@ function UnknownSpaceProfile({
     >
       <Box alignItems="Center" gap="200">
         <Text size="H4" truncate>
-          {name || 'Unknown'}
+          {name || 'نامشخص'}
         </Text>
         {suggested && (
           <Badge variant="Success" fill="Soft" radii="Pill" outlined>
-            <Text size="L400">Suggested</Text>
+            <Text size="L400">پیشنهاد شده</Text>
           </Badge>
         )}
         {joinState.status === AsyncStatus.Error && (
@@ -216,7 +216,7 @@ function SpaceProfile({
         </Text>
         {suggested && (
           <Badge variant="Success" fill="Soft" radii="Pill" outlined>
-            <Text size="L400">Suggested</Text>
+            <Text size="L400">پیشنهاد شده</Text>
           </Badge>
         )}
       </Box>
@@ -241,7 +241,7 @@ function RootSpaceProfile({ closed, categoryId, handleClose }: RootSpaceProfileP
     >
       <Box alignItems="Center" gap="200">
         <Text size="H4" truncate>
-          Rooms
+          اتاق ها
         </Text>
       </Box>
     </Chip>
@@ -289,10 +289,10 @@ function AddRoomButton({ item }: { item: HierarchyItem }) {
               fill="None"
               onClick={handleCreateRoom}
             >
-              <Text size="T300">New Room</Text>
+              <Text size="T300">اتاق جدید</Text>
             </MenuItem>
             <MenuItem size="300" radii="300" fill="None" onClick={handleAddExisting}>
-              <Text size="T300">Existing Room</Text>
+              <Text size="T300">اتاق موجود</Text>
             </MenuItem>
           </Menu>
         </FocusTrap>
@@ -305,7 +305,7 @@ function AddRoomButton({ item }: { item: HierarchyItem }) {
         onClick={handleAddRoom}
         aria-pressed={!!cords}
       >
-        <Text size="B300">Add Room</Text>
+        <Text size="B300">اضافه کردن اتاق</Text>
       </Chip>
     </PopOut>
   );
@@ -351,10 +351,10 @@ function AddSpaceButton({ item }: { item: HierarchyItem }) {
               fill="None"
               onClick={handleCreateSpace}
             >
-              <Text size="T300">New Space</Text>
+              <Text size="T300">فضای جدید</Text>
             </MenuItem>
             <MenuItem size="300" radii="300" fill="None" onClick={handleAddExisting}>
-              <Text size="T300">Existing Space</Text>
+              <Text size="T300">فضای موجود</Text>
             </MenuItem>
           </Menu>
         </FocusTrap>
@@ -367,7 +367,7 @@ function AddSpaceButton({ item }: { item: HierarchyItem }) {
         onClick={handleAddSpace}
         aria-pressed={!!cords}
       >
-        <Text size="B300">Add Space</Text>
+        <Text size="B300">اضافه کردن فضا</Text>
       </Chip>
     </PopOut>
   );
