@@ -64,14 +64,14 @@ function GeneralSettings({ roomId }) {
   return (
     <>
       <div className="room-settings__card">
-        <MenuHeader>Options</MenuHeader>
+        <MenuHeader>تنظیمات</MenuHeader>
         <MenuItem
           variant="danger"
           onClick={async () => {
             const isConfirmed = await confirmDialog(
-              'Leave space',
-              `Are you sure that you want to leave "${roomName}" space?`,
-              'Leave',
+              'ترک فضا',
+              `مطمئنی که میخوای بری از این "${roomName}" فضا?`,
+              'ترک فضا',
               'danger'
             );
             if (isConfirmed) mx.leave(roomId);
@@ -82,11 +82,11 @@ function GeneralSettings({ roomId }) {
         </MenuItem>
       </div>
       <div className="space-settings__card">
-        <MenuHeader>Space visibility (who can join)</MenuHeader>
+        <MenuHeader>دید فضا (چه کسانی می توانند بپیوندند)</MenuHeader>
         <RoomVisibility roomId={roomId} />
       </div>
       <div className="space-settings__card">
-        <MenuHeader>Space addresses</MenuHeader>
+        <MenuHeader>آدرس های فضا</MenuHeader>
         <RoomAliases roomId={roomId} />
       </div>
     </>
@@ -137,7 +137,7 @@ function SpaceSettings() {
       title={
         <Text variant="s1" weight="medium" primary>
           {isOpen && room.name}
-          <span style={{ color: 'var(--tc-surface-low)' }}> — space settings</span>
+          <span style={{ color: 'var(--tc-surface-low)' }}> — تنظیمات فضا</span>
         </Text>
       }
       contentOptions={<IconButton src={CrossIC} onClick={requestClose} tooltip="Close" />}
