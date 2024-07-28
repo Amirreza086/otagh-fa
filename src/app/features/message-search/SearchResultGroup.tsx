@@ -129,7 +129,7 @@ export function SearchResultGroup({
         return (
           <Box grow="Yes" direction="Column">
             <Text size="T400" priority="300">
-              Room Tombstone. {content.body}
+              سنگ قبر اتاق. {content.body}
             </Text>
           </Box>
         );
@@ -237,7 +237,7 @@ export function SearchResultGroup({
                       variant="Secondary"
                       radii="400"
                     >
-                      <Text size="T200">Open</Text>
+                      <Text size="T200">بازکردن</Text>
                     </Chip>
                   </Box>
                 </Box>
