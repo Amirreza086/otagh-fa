@@ -23,12 +23,12 @@ function TermsErrorDialog({
         </Box>
         <Button variant="Critical" onClick={onRetry}>
           <Text as="span" size="B400">
-            Retry
+            تلاش دوباره
           </Text>
         </Button>
         <Button variant="Critical" fill="None" outlined onClick={onCancel}>
           <Text as="span" size="B400">
-            Cancel
+            لغو
           </Text>
         </Button>
       </Box>
@@ -58,7 +58,7 @@ export function AutoTermsStageDialog({ stageData, submitAuthDict, onCancel }: St
     return (
       <TermsErrorDialog
         title={errorCode}
-        message={error ?? 'Failed to submit Terms and Condition Acceptance.'}
+        message={error ?? 'شرایط و ضوابط پذیرش تائید نشد.'}
         onRetry={handleSubmit}
         onCancel={onCancel}
       />
