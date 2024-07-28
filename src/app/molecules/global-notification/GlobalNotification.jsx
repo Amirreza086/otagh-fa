@@ -130,42 +130,42 @@ function GlobalNotification() {
 
   return (
     <div className="global-notification">
-      <MenuHeader>Global Notifications</MenuHeader>
+      <MenuHeader>اعلانات همگانی</MenuHeader>
       <SettingTile
-        title="Direct messages"
+        title="پیام های مستقیم"
         options={(
           <Button onClick={(evt) => onSelect(evt, DM)} iconSrc={ChevronBottomIC}>
             { typeToLabel[rulesToType[DM]] }
           </Button>
         )}
-        content={<Text variant="b3">Default notification settings for all direct message.</Text>}
+        content={<Text variant="b3">تنظیمات پیش‌فرض اعلان برای همه پیام‌های مستقیم.</Text>}
       />
       <SettingTile
-        title="Encrypted direct messages"
+        title="پیام های مستقیم رمزنگاری شده"
         options={(
           <Button onClick={(evt) => onSelect(evt, ENC_DM)} iconSrc={ChevronBottomIC}>
             {typeToLabel[rulesToType[ENC_DM]]}
           </Button>
         )}
-        content={<Text variant="b3">Default notification settings for all encrypted direct message.</Text>}
+        content={<Text variant="b3">تنظیمات اعلان پیش فرض برای همه پیام های مستقیم رمزگذاری شده.</Text>}
       />
       <SettingTile
-        title="Rooms messages"
+        title="پیام های اتاق ها"
         options={(
           <Button onClick={(evt) => onSelect(evt, ROOM)} iconSrc={ChevronBottomIC}>
             {typeToLabel[rulesToType[ROOM]]}
           </Button>
         )}
-        content={<Text variant="b3">Default notification settings for all room message.</Text>}
+        content={<Text variant="b3">تنظیمات پیش‌فرض اعلان برای پیام تمام اتاق‌ها.</Text>}
       />
       <SettingTile
-        title="Encrypted rooms messages"
+        title="پیام های اتاق های رمزگذاری شده"
         options={(
           <Button onClick={(evt) => onSelect(evt, ENC_ROOM)} iconSrc={ChevronBottomIC}>
             {typeToLabel[rulesToType[ENC_ROOM]]}
           </Button>
         )}
-        content={<Text variant="b3">Default notification settings for all encrypted room message.</Text>}
+        content={<Text variant="b3">تنظیمات پیش‌فرض اعلان برای همه پیام‌های اتاق رمزگذاری‌شده.</Text>}
       />
     </div>
   );
