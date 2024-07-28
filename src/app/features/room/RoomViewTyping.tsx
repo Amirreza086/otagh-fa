@@ -58,7 +58,7 @@ export const RoomViewTyping = as<'div', RoomViewTypingProps>(
               <>
                 <b>{typingNames[0]}</b>
                 <Text as="span" size="Inherit" priority="300">
-                  {' is typing...'}
+                  {' در حال تایپ کردن...'}
                 </Text>
               </>
             )}
@@ -66,11 +66,11 @@ export const RoomViewTyping = as<'div', RoomViewTypingProps>(
               <>
                 <b>{typingNames[0]}</b>
                 <Text as="span" size="Inherit" priority="300">
-                  {' and '}
+                  {' و '}
                 </Text>
                 <b>{typingNames[1]}</b>
                 <Text as="span" size="Inherit" priority="300">
-                  {' are typing...'}
+                  {' دارند تایپ می کنند...'}
                 </Text>
               </>
             )}
@@ -82,11 +82,11 @@ export const RoomViewTyping = as<'div', RoomViewTypingProps>(
                 </Text>
                 <b>{typingNames[1]}</b>
                 <Text as="span" size="Inherit" priority="300">
-                  {' and '}
+                  {' و '}
                 </Text>
                 <b>{typingNames[2]}</b>
                 <Text as="span" size="Inherit" priority="300">
-                  {' are typing...'}
+                  {' دارند تایپ می کنند...'}
                 </Text>
               </>
             )}
@@ -102,11 +102,11 @@ export const RoomViewTyping = as<'div', RoomViewTypingProps>(
                 </Text>
                 <b>{typingNames[2]}</b>
                 <Text as="span" size="Inherit" priority="300">
-                  {' and '}
+                  {' و '}
                 </Text>
                 <b>{typingNames.length - 3} others</b>
                 <Text as="span" size="Inherit" priority="300">
-                  {' are typing...'}
+                  {' دارند تایپ می کنند...'}
                 </Text>
               </>
             )}
