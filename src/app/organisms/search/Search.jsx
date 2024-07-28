@@ -255,7 +255,7 @@ function Search() {
           </ScrollView>
         </div>
         <div className="search-dialog__footer">
-          <Text variant="b3">Type # for rooms, @ for DMs and * for spaces. Hotkey: Ctrl + k</Text>
+          <Text variant="b3">تایپ # برای اتاق ها, @ برای DMs و * برای فضاها. Hotkey: Ctrl + k</Text>
         </div>
       </div>
     </RawModal>
