@@ -78,17 +78,17 @@ function RoomVisibility({ roomId }) {
 
   const items = [{
     iconSrc: isSpace ? SpaceLockIC : HashLockIC,
-    text: 'Private (invite only)',
+    text: 'خصوصی (فقط دعوت)',
     type: visibility.INVITE,
     unsupported: false,
   }, {
     iconSrc: isSpace ? SpaceIC : HashIC,
-    text: roomVersion < 8 ? 'Restricted (unsupported: required room upgrade)' : 'Restricted (space member can join)',
+    text: roomVersion < 8 ? 'محدود (پشتیبانی نمی‌شود : ارتقاء اتاق الزامی است)' : 'محدود شده (عضو فضا می تواند بپیوندد)',
     type: visibility.RESTRICTED,
     unsupported: roomVersion < 8 || noSpaceParent,
   }, {
     iconSrc: isSpace ? SpaceGlobeIC : HashGlobeIC,
-    text: 'Public (anyone can join)',
+    text: 'عمومی (هر کسی می تواند بپیوندد)',
     type: visibility.PUBLIC,
     unsupported: false,
   }];
