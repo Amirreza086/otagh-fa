@@ -24,13 +24,13 @@ export function ResetPassword() {
   return (
     <Box direction="Column" gap="500">
       <Text size="H2" priority="400">
-        Reset Password
+        بازنشانی رمز عبور
       </Text>
       <PasswordResetForm defaultEmail={resetPasswordSearchParams.email} />
       <span data-spacing-node />
 
       <Text align="Center">
-        Remember your password? <Link to={getLoginPath(server)}>Login</Link>
+        آیا رمز عبور خود را به یا دارید؟ <Link to={getLoginPath(server)}>وارد شوید</Link>
       </Text>
     </Box>
   );
