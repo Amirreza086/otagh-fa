@@ -183,7 +183,7 @@ function EmojiBoardTabs({
         onClick={() => onTabChange(EmojiBoardTab.Sticker)}
       >
         <Text as="span" size="L400">
-          Sticker
+          استیکر
         </Text>
       </Badge>
       <Badge
@@ -195,7 +195,7 @@ function EmojiBoardTabs({
         onClick={() => onTabChange(EmojiBoardTab.Emoji)}
       >
         <Text as="span" size="L400">
-          Emoji
+          ایموجی
         </Text>
       </Badge>
     </Box>
@@ -552,9 +552,9 @@ export const StickerGroups = memo(({ mx, groups }: { mx: MatrixClient; groups: I
       >
         <Icon size="600" src={Icons.Sticker} />
         <Box direction="Inherit">
-          <Text align="Center">No Sticker Packs!</Text>
+          <Text align="Center">بسته استیکری موجود نیست!</Text>
           <Text priority="300" align="Center" size="T200">
-            Add stickers from user, room or space settings.
+            برای کاربرها ، اتاق ها و فضاها استیکرهای متنوعی میتوانید اضافه کنید.
           </Text>
         </Box>
       </Box>
@@ -806,7 +806,7 @@ export function EmojiBoard({
                         requestClose();
                       }}
                     >
-                      <Text size="L400">React</Text>
+                      <Text size="L400">واکنش</Text>
                     </Chip>
                   ) : (
                     <Icon src={Icons.Search} size="50" />
