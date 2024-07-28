@@ -42,9 +42,9 @@ function ProfileEditor({ userId }) {
   const handleAvatarUpload = async (url) => {
     if (url === null) {
       const isConfirmed = await confirmDialog(
-        'Remove avatar',
-        'Are you sure that you want to remove avatar?',
-        'Remove',
+        'پاک کردن آواتار',
+        'آیا مطمئن هستنید که میخواهید آواتار خود را پاک کنید؟',
+        'پاک کردن',
         'caution'
       );
       if (isConfirmed) {
@@ -86,15 +86,15 @@ function ProfileEditor({ userId }) {
       }}
     >
       <Input
-        label={`Display name of ${mx.getUserId()}`}
+        label={`نام نمایشی از ${mx.getUserId()}`}
         onChange={onDisplayNameInputChange}
         value={mx.getUser(mx.getUserId()).displayName}
         forwardRef={displayNameRef}
       />
       <Button variant="primary" type="submit" disabled={disabled}>
-        Save
+        ذخیره
       </Button>
-      <Button onClick={cancelDisplayNameChanges}>Cancel</Button>
+      <Button onClick={cancelDisplayNameChanges}>لغو</Button>
     </form>
   );
 
