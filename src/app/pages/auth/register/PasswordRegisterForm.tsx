@@ -259,7 +259,7 @@ export function PasswordRegisterForm({
       <Box as="form" onSubmit={handleSubmit} direction="Inherit" gap="400">
         <Box direction="Column" gap="100">
           <Text as="label" size="L400" priority="300">
-            Username
+            نام کاربری
           </Text>
           <Input
             variant="Background"
@@ -270,13 +270,13 @@ export function PasswordRegisterForm({
             required
           />
           {registerError?.errcode === RegisterError.UserTaken && (
-            <FieldError message="This username is already taken." />
+            <FieldError message="این نام کاربری قبلاً گرفته شده است." />
           )}
           {registerError?.errcode === RegisterError.UserInvalid && (
-            <FieldError message="This username contains invalid characters." />
+            <FieldError message="این نام کاربری حاوی نویسه های نامعتبر است." />
           )}
           {registerError?.errcode === RegisterError.UserExclusive && (
-            <FieldError message="This username is reserved." />
+            <FieldError message="این نام کاربری محفوظ است." />
           )}
         </Box>
         <ConfirmPasswordMatch initialValue>
@@ -284,7 +284,7 @@ export function PasswordRegisterForm({
             <>
               <Box direction="Column" gap="100">
                 <Text as="label" size="L400" priority="300">
-                  Password
+                  رمز عبور
                 </Text>
                 <PasswordInput
                   ref={passRef}
@@ -299,7 +299,7 @@ export function PasswordRegisterForm({
                   <FieldError
                     message={
                       registerError.data.error ??
-                      'Weak Password. Password rejected by server please choosing more strong Password.'
+                      'رمز ضعیف. رمز عبور توسط سرور رد شد لطفا رمز عبور قوی تر را انتخاب کنید.'
                     }
                   />
                 )}
@@ -307,14 +307,14 @@ export function PasswordRegisterForm({
                   <FieldError
                     message={
                       registerError.data.error ??
-                      'Short Password. Password rejected by server please choosing more long Password.'
+                      'رمز عبور کوتاه رمز عبور توسط سرور رد شد لطفاً رمز عبور طولانی تری را انتخاب کنید.'
                     }
                   />
                 )}
               </Box>
               <Box direction="Column" gap="100">
                 <Text as="label" size="L400" priority="300">
-                  Confirm Password
+                  تائید رمز عبور
                 </Text>
                 <PasswordInput
                   ref={confPassRef}
@@ -334,8 +334,8 @@ export function PasswordRegisterForm({
           <Box direction="Column" gap="100">
             <Text as="label" size="L400" priority="300">
               {requiredStageInFlows(uiaFlows, AuthType.RegistrationToken)
-                ? 'Registration Token'
-                : 'Registration Token (Optional)'}
+                ? 'رمز ثبت نام'
+                : 'رمز ثبت نام (اختیاری)'}
             </Text>
             <Input
               variant="Background"
@@ -350,7 +350,7 @@ export function PasswordRegisterForm({
         {hasStageInFlows(uiaFlows, AuthType.Email) && (
           <Box direction="Column" gap="100">
             <Text as="label" size="L400" priority="300">
-              {requiredStageInFlows(uiaFlows, AuthType.Email) ? 'Email' : 'Email (Optional)'}
+              {requiredStageInFlows(uiaFlows, AuthType.Email) ? 'ایمیل' : 'ایمیل (اختیاری)'}
             </Text>
             <Input
               variant="Background"
@@ -368,30 +368,30 @@ export function PasswordRegisterForm({
           <Box alignItems="Center" gap="200">
             <Checkbox name="termsInput" size="300" variant="Primary" required />
             <Text size="T300">
-              I accept server{' '}
+             من قوانین و شرایط {' '}
               <a href={termUrl} target="_blank" rel="noreferrer">
-                Terms and Conditions
+                سرور را می پذیرم
               </a>
               .
             </Text>
           </Box>
         )}
         {registerError?.errcode === RegisterError.RateLimited && (
-          <FieldError message="Failed to register. Your register request has been rate-limited by server, Please try after some time." />
+          <FieldError message="ثبت نام نشد. درخواست ثبت نام شما توسط سرور محدود شده است، لطفاً بعد از مدتی امتحان کنید." />
         )}
         {registerError?.errcode === RegisterError.Forbidden && (
-          <FieldError message="Failed to register. The homeserver does not permit registration." />
+          <FieldError message="ثبت نام نشد. سرور خانه اجازه ثبت نام را نمی دهد." />
         )}
         {registerError?.errcode === RegisterError.InvalidRequest && (
-          <FieldError message="Failed to register. Invalid request." />
+          <FieldError message="ثبت نام نشد. درخواست نامعتبر." />
         )}
         {registerError?.errcode === RegisterError.Unknown && (
-          <FieldError message={registerError.data.error ?? 'Failed to register. Unknown Reason.'} />
+          <FieldError message={registerError.data.error ?? 'ثبت نام نشد. به دلیل نامعلوم.'} />
         )}
         <span data-spacing-node />
         <Button variant="Primary" size="500" type="submit">
           <Text as="span" size="B500">
-            Register
+            ثبت نام
           </Text>
         </Button>
       </Box>
