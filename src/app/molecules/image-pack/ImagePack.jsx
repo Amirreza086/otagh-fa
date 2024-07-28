@@ -160,9 +160,9 @@ function useImagePackHandles(pack, sendPackContent) {
   };
   const handleDeleteItem = async (key) => {
     const isConfirmed = await confirmDialog(
-      'Delete',
-      `Are you sure that you want to delete "${key}"?`,
-      'Delete',
+      'حذف کردن',
+      `آیا مطمئن هستید که می خواهید حذف کنید؟ "${key}"?`,
+      'حذف کردن',
       'danger',
     );
     if (!isConfirmed) return;
@@ -250,9 +250,9 @@ function ImagePack({ roomId, stateKey, handlePackDelete }) {
 
   const handleDeletePack = async () => {
     const isConfirmed = await confirmDialog(
-      'Delete Pack',
-      `Are you sure that you want to delete "${pack.displayName}"?`,
-      'Delete',
+      'حذف بسته',
+      `آیا مطمئن هستید که می خواهید حذف کنید؟ "${pack.displayName}"?`,
+      'حذف کردن',
       'danger',
     );
     if (!isConfirmed) return;
@@ -278,9 +278,9 @@ function ImagePack({ roomId, stateKey, handlePackDelete }) {
       { images.length === 0 ? null : (
         <div>
           <div className="image-pack__header">
-            <Text variant="b3">Image</Text>
-            <Text variant="b3">Shortcode</Text>
-            <Text variant="b3">Usage</Text>
+            <Text variant="b3">تصویر</Text>
+            <Text variant="b3">کد کوتاه</Text>
+            <Text variant="b3">استفاده</Text>
           </div>
           {images.map(([shortcode, image]) => (
             <ImagePackItem
@@ -301,19 +301,19 @@ function ImagePack({ roomId, stateKey, handlePackDelete }) {
             <Button onClick={() => setViewMore(!viewMore)}>
               {
                 viewMore
-                  ? 'View less'
-                  : `View ${pack.images.size - 2} more`
+                  ? 'مشاهده کمتر'
+                  : `مشاهده ${pack.images.size - 2} بیشتر`
               }
             </Button>
           )}
-          { handlePackDelete && <Button variant="danger" onClick={handleDeletePack}>Delete Pack</Button>}
+          { handlePackDelete && <Button variant="danger" onClick={handleDeletePack}>حذف بسته</Button>}
         </div>
       )}
       <div className="image-pack__global">
         <Checkbox variant="positive" onToggle={handleGlobalChange} isActive={isGlobal} />
         <div>
-          <Text variant="b2">Use globally</Text>
-          <Text variant="b3">Add this pack to your account to use in all rooms.</Text>
+          <Text variant="b2">در سطح همگانی استفاده کنید</Text>
+          <Text variant="b3">این بسته را به حساب خود اضافه کنید تا در همه اتاق ها استفاده کنید.</Text>
         </div>
       </div>
     </div>
@@ -362,9 +362,9 @@ function ImagePackUser() {
       { images.length === 0 ? null : (
         <div>
           <div className="image-pack__header">
-            <Text variant="b3">Image</Text>
-            <Text variant="b3">Shortcode</Text>
-            <Text variant="b3">Usage</Text>
+            <Text variant="b3">تصویر</Text>
+            <Text variant="b3">کد کوتاه</Text>
+            <Text variant="b3">استفاده</Text>
           </div>
           {images.map(([shortcode, image]) => (
             <ImagePackItem
@@ -384,8 +384,8 @@ function ImagePackUser() {
           <Button onClick={() => setViewMore(!viewMore)}>
             {
               viewMore
-                ? 'View less'
-                : `View ${pack.images.size - 2} more`
+                ? 'مشاهده کمتر'
+                : `مشاهده ${pack.images.size - 2} بیشتر`
             }
           </Button>
         </div>
@@ -433,7 +433,7 @@ function ImagePackGlobal() {
 
   return (
     <div className="image-pack-global">
-      <MenuHeader>Global packs</MenuHeader>
+      <MenuHeader>بسته های همگانی</MenuHeader>
       <div>
         {
           roomIdToStateKeys.size > 0
