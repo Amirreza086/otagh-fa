@@ -36,9 +36,9 @@ export const useMemberEventParser = (): MemberEventParser => {
             body: (
               <>
                 <b>{senderName}</b>
-                {' accepted '}
+                {' پذیرفته شده '}
                 <b>{userName}</b>
-                {`'s join request `}
+                {`'s درخواست پیوستن `}
                 {content.reason}
               </>
             ),
@@ -50,7 +50,7 @@ export const useMemberEventParser = (): MemberEventParser => {
           body: (
             <>
               <b>{senderName}</b>
-              {' invited '}
+              {' دعوت شده '}
               <b>{userName}</b> {content.reason}
             </>
           ),
@@ -63,7 +63,7 @@ export const useMemberEventParser = (): MemberEventParser => {
           body: (
             <>
               <b>{userName}</b>
-              {' request to join room '}
+              {' درخواست برای عضویت در این اتاق '}
               {content.reason}
             </>
           ),
@@ -76,7 +76,7 @@ export const useMemberEventParser = (): MemberEventParser => {
           body: (
             <>
               <b>{userName}</b>
-              {' joined the room'}
+              {' به اتاق پیوست'}
             </>
           ),
         };
@@ -90,7 +90,7 @@ export const useMemberEventParser = (): MemberEventParser => {
               senderId === userId ? (
                 <>
                   <b>{userName}</b>
-                  {' rejected the invitation '}
+                  {' دعوت را رد کرد '}
                   {content.reason}
                 </>
               ) : (
@@ -98,7 +98,7 @@ export const useMemberEventParser = (): MemberEventParser => {
                   <b>{senderName}</b>
                   {' rejected '}
                   <b>{userName}</b>
-                  {`'s join request `}
+                  {`'s درخواست پیوستن `}
                   {content.reason}
                 </>
               ),
@@ -112,15 +112,15 @@ export const useMemberEventParser = (): MemberEventParser => {
               senderId === userId ? (
                 <>
                   <b>{userName}</b>
-                  {' revoked joined request '}
+                  {' درخواست ملحق شده باطل شد '}
                   {content.reason}
                 </>
               ) : (
                 <>
                   <b>{senderName}</b>
-                  {' revoked '}
+                  {' لغو شد '}
                   <b>{userName}</b>
-                  {`'s invite `}
+                  {`'s دعوت `}
                   {content.reason}
                 </>
               ),
@@ -133,7 +133,7 @@ export const useMemberEventParser = (): MemberEventParser => {
             body: (
               <>
                 <b>{senderName}</b>
-                {' unbanned '}
+                {' رفع ممنوعیت '}
                 <b>{userName}</b> {content.reason}
               </>
             ),
@@ -146,13 +146,13 @@ export const useMemberEventParser = (): MemberEventParser => {
             senderId === userId ? (
               <>
                 <b>{userName}</b>
-                {' left the room '}
+                {' اتاق را ترک کرد '}
                 {content.reason}
               </>
             ) : (
               <>
                 <b>{senderName}</b>
-                {' kicked '}
+                {' لگد زد '}
                 <b>{userName}</b> {content.reason}
               </>
             ),
@@ -165,7 +165,7 @@ export const useMemberEventParser = (): MemberEventParser => {
           body: (
             <>
               <b>{senderName}</b>
-              {' banned '}
+              {' ممنوع کردن '}
               <b>{userName}</b> {content.reason}
             </>
           ),
@@ -181,13 +181,13 @@ export const useMemberEventParser = (): MemberEventParser => {
         body: content.displayname ? (
           <>
             <b>{prevUserName}</b>
-            {' changed display name to '}
+            {' تغییر نام نمایشی به '}
             <b>{userName}</b>
           </>
         ) : (
           <>
             <b>{prevUserName}</b>
-            {' removed their display name '}
+            {' نام نمایشی آنها را حذف کرد '}
           </>
         ),
       };
@@ -198,12 +198,12 @@ export const useMemberEventParser = (): MemberEventParser => {
         body: content.displayname ? (
           <>
             <b>{userName}</b>
-            {' changed their avatar'}
+            {' آواتار خود را تغییر داد'}
           </>
         ) : (
           <>
             <b>{userName}</b>
-            {' removed their avatar '}
+            {' آواتار آنها را حذف کرد '}
           </>
         ),
       };
