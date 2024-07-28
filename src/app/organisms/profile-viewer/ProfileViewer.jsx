@@ -70,13 +70,13 @@ function ModerationTools({ roomId, userId }) {
       {canIKick && (
         <form onSubmit={handleKick}>
           <Input label="Kick reason" name="kick-reason" />
-          <Button type="submit">Kick</Button>
+          <Button type="submit">لگد زدن</Button>
         </form>
       )}
       {canIBan && (
         <form onSubmit={handleBan}>
           <Input label="Ban reason" name="ban-reason" />
-          <Button type="submit">Ban</Button>
+          <Button type="submit">ممنوع کردن</Button>
         </form>
       )}
     </div>
@@ -117,8 +117,8 @@ function SessionInfo({ userId }) {
     if (!isVisible) return null;
     return (
       <div className="session-info__chips">
-        {devices === null && <Text variant="b2">Loading sessions...</Text>}
-        {devices?.length === 0 && <Text variant="b2">No session found.</Text>}
+        {devices === null && <Text variant="b2">در حال بارگیری جلسات...</Text>}
+        {devices?.length === 0 && <Text variant="b2">جلساتی پیدا نشد.</Text>}
         {devices !== null &&
           devices.map((device) => (
             <Chip
@@ -137,10 +137,10 @@ function SessionInfo({ userId }) {
         onClick={() => setIsVisible(!isVisible)}
         iconSrc={isVisible ? ChevronBottomIC : ChevronRightIC}
       >
-        <Text variant="b2">{`View ${
+        <Text variant="b2">{`مشاهده ${
           devices?.length > 0
-            ? `${devices.length} ${devices.length === 1 ? 'session' : 'sessions'}`
-            : 'sessions'
+            ? `${devices.length} ${devices.length === 1 ? 'جسله' : 'جلسات'}`
+            : 'جلسات'
         }`}</Text>
       </MenuItem>
       {renderSessionChips()}
@@ -246,18 +246,18 @@ function ProfileFooter({ roomId, userId, onRequestClose }) {
   return (
     <div className="profile-viewer__buttons">
       <Button variant="primary" onClick={openDM} disabled={isCreatingDM}>
-        {isCreatingDM ? 'Creating room...' : 'Message'}
+        {isCreatingDM ? 'در حال ساختن اتاق...' : 'پیام'}
       </Button>
       {isBanned && canIKick && (
         <Button variant="positive" onClick={() => mx.unban(roomId, userId)}>
-          Unban
+          رفع ممنوعیت
         </Button>
       )}
       {(isInvited ? canIKick : room.canInvite(mx.getUserId())) && isInvitable && (
         <Button onClick={toggleInvite} disabled={isInviting}>
           {isInvited
-            ? `${isInviting ? 'Disinviting...' : 'Disinvite'}`
-            : `${isInviting ? 'Inviting...' : 'Invite'}`}
+            ? `${isInviting ? 'منع دعوت کردن...' : 'Disinvite'}`
+            : `${isInviting ? 'دعوت کردن...' : 'Invite'}`}
         </Button>
       )}
       <Button
@@ -266,8 +266,8 @@ function ProfileFooter({ roomId, userId, onRequestClose }) {
         disabled={isIgnoring}
       >
         {isUserIgnored
-          ? `${isIgnoring ? 'Unignoring...' : 'Unignore'}`
-          : `${isIgnoring ? 'Ignoring...' : 'Ignore'}`}
+          ? `${isIgnoring ? 'نادیده گرفتن...' : 'نادیده گرفت'}`
+          : `${isIgnoring ? 'چشم پوشی کردن...' : 'چشم پوشی کرد'}`}
       </Button>
     </div>
   );
@@ -350,9 +350,9 @@ function ProfileViewer() {
     const handleChangePowerLevel = async (newPowerLevel) => {
       if (newPowerLevel === powerLevel) return;
       const SHARED_POWER_MSG =
-        'You will not be able to undo this change as you are promoting the user to have the same power level as yourself. Are you sure?';
+        'شما نمی توانید این تغییر را واگرد کنید زیرا در حال ارتقای سطح قدرت کاربر برای داشتن همان سطح قدرت با خودتان هستید. مطمئنی؟';
       const DEMOTING_MYSELF_MSG =
-        'You will not be able to undo this change as you are demoting yourself. Are you sure?';
+        'چون در حال تنزل رتبه خود هستید، نمی‌توانید این تغییر را لغو کنید. مطمئنی؟';
 
       const isSharedPower = newPowerLevel === myPowerLevel;
       const isDemotingMyself = userId === mx.getUserId();
@@ -394,7 +394,7 @@ function ProfileViewer() {
             <Text variant="b2">{userId}</Text>
           </div>
           <div className="profile-viewer__user__role">
-            <Text variant="b3">Role</Text>
+            <Text variant="b3">نقش</Text>
             <Button
               onClick={canChangeRole ? handlePowerSelector : null}
               iconSrc={canChangeRole ? ChevronBottomIC : null}
