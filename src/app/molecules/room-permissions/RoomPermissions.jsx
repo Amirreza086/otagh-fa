@@ -19,123 +19,123 @@ import { useMatrixClient } from '../../hooks/useMatrixClient';
 
 const permissionsInfo = {
   users_default: {
-    name: 'Default role',
-    description: 'Set default role for all members.',
+    name: 'نقش پیش فرض',
+    description: 'نقش پیش فرض را برای همه اعضا تنظیم کنید.',
     default: 0,
   },
   events_default: {
-    name: 'Send messages',
-    description: 'Set minimum power level to send messages in room.',
+    name: 'ارسال پیام ها',
+    description: 'حداقل سطح توان را برای ارسال پیام در اتاق تنظیم کنید.',
     default: 0,
   },
   'm.reaction': {
     parent: 'events',
-    name: 'Send reactions',
-    description: 'Set minimum power level to send reactions in room.',
+    name: 'ارسال واکنش ها',
+    description: 'حداقل سطح توان را برای ارسال واکنش ها در اتاق تنظیم کنید.',
     default: 0,
   },
   redact: {
-    name: 'Delete messages sent by others',
-    description: 'Set minimum power level to delete messages in room.',
+    name: ' حذف پیام های ارسال شده توسط دیگران',
+    description: 'حداقل سطح توان را برای حذف پیام های اتاق تنظیم کنید.',
     default: 50,
   },
   notifications: {
-    name: 'Ping room',
-    description: 'Set minimum power level to ping room.',
+    name: 'اتاق پینگ',
+    description: 'حداقل سطح توان را روی اتاق پینگ تنظیم کنید.',
     default: {
       room: 50,
     },
   },
   'm.space.child': {
     parent: 'events',
-    name: 'Manage rooms in space',
-    description: 'Set minimum power level to manage rooms in space.',
+    name: 'اتاق ها را در فضا مدیریت کنید',
+    description: 'حداقل سطح توان را برای مدیریت اتاق ها در فضا تنظیم کنید.',
     default: 50,
   },
   invite: {
-    name: 'Invite',
-    description: 'Set minimum power level to invite members.',
+    name: 'دعوت',
+    description: 'حداقل سطح قدرت را برای دعوت از اعضا تنظیم کنید.',
     default: 50,
   },
   kick: {
-    name: 'Kick',
-    description: 'Set minimum power level to kick members.',
+    name: 'لگد کردن',
+    description: 'حداقل سطح قدرت را برای ضربه زدن به اعضا تنظیم کنید.',
     default: 50,
   },
   ban: {
-    name: 'Ban',
-    description: 'Set minimum power level to ban members.',
+    name: 'مسدود کردن',
+    description: 'حداقل سطح قدرت را برای ممنوعیت اعضا تنظیم کنید.',
     default: 50,
   },
   'm.room.avatar': {
     parent: 'events',
-    name: 'Change avatar',
-    description: 'Set minimum power level to change room/space avatar.',
+    name: 'انتخاب آواتار',
+    description: 'حداقل سطح توان را برای تغییر آواتار اتاق/فضا تنظیم کنید.',
     default: 50,
   },
   'm.room.name': {
     parent: 'events',
-    name: 'Change name',
-    description: 'Set minimum power level to change room/space name.',
+    name: 'انتخاب نام',
+    description: 'حداقل سطح توان را برای تغییر نام اتاق/فضا تنظیم کنید.',
     default: 50,
   },
   'm.room.topic': {
     parent: 'events',
-    name: 'Change topic',
-    description: 'Set minimum power level to change room/space topic.',
+    name: 'انتخاب موضوع',
+    description: 'حداقل سطح توان را برای تغییر موضوع اتاق/فضا تنظیم کنید.',
     default: 50,
   },
   state_default: {
-    name: 'Change settings',
-    description: 'Set minimum power level to change settings.',
+    name: 'انتخاب تنظیمات',
+    description: 'حداقل سطح توان را برای تغییر تنظیمات تنظیم کنید.',
     default: 50,
   },
   'm.room.canonical_alias': {
     parent: 'events',
-    name: 'Change published address',
-    description: 'Set minimum power level to publish and set main address.',
+    name: 'انتخاب آدرس انتشار یافته',
+    description: 'حداقل سطح توان را برای انتشار و تنظیم آدرس اصلی تنظیم کنید.',
     default: 50,
   },
   'm.room.power_levels': {
     parent: 'events',
-    name: 'Change permissions',
-    description: 'Set minimum power level to change permissions.',
+    name: 'انتخاب دسترسی ها',
+    description: 'حداقل سطح توان را برای تغییر مجوزها تنظیم کنید.',
     default: 50,
   },
   'm.room.encryption': {
     parent: 'events',
-    name: 'Enable room encryption',
-    description: 'Set minimum power level to enable room encryption.',
+    name: 'فعال کردن رمزنگاری اتاق',
+    description: 'حداقل سطح توان را برای فعال کردن رمزگذاری اتاق تنظیم کنید.',
     default: 50,
   },
   'm.room.history_visibility': {
     parent: 'events',
-    name: 'Change history visibility',
-    description: 'Set minimum power level to change room messages history visibility.',
+    name: 'تغییر نمایان بودن تاریخچه',
+    description: 'حداقل سطح توان را برای تغییر نمایان بودن تاریخچه پیام‌های اتاق تنظیم کنید.',
     default: 50,
   },
   'm.room.tombstone': {
     parent: 'events',
-    name: 'Upgrade room',
-    description: 'Set minimum power level to upgrade room.',
+    name: 'آپدیت اتاق',
+    description: 'حداقل سطح توان را برای ارتقای اتاق تنظیم کنید.',
     default: 50,
   },
   'm.room.pinned_events': {
     parent: 'events',
-    name: 'Pin messages',
-    description: 'Set minimum power level to pin messages in room.',
+    name: 'پین کردن پیام ها',
+    description: 'حداقل سطح توان را برای پین کردن پیام‌ها در اتاق تنظیم کنید.',
     default: 50,
   },
   'm.room.server_acl': {
     parent: 'events',
-    name: 'Change server ACLs',
-    description: 'Set minimum power level to change server ACLs.',
+    name: 'انتخاب سرور ACLs',
+    description: 'حداقل سطح توان را برای تغییر ACL های سرور تنظیم کنید.',
     default: 50,
   },
   'im.vector.modular.widgets': {
     parent: 'events',
-    name: 'Modify widgets',
-    description: 'Set minimum power level to modify room widgets.',
+    name: 'اصلاح ویجت ها',
+    description: 'حداقل سطح توان را برای اصلاح ویجت‌های اتاق تنظیم کنید.',
     default: 50,
   },
 };
@@ -259,7 +259,7 @@ function RoomPermissions({ roomId }) {
                           iconSrc={canChangePermission ? ChevronBottomIC : null}
                         >
                           <Text variant="b2">
-                            {`${getPowerLabel(powerLevel) || 'Member'} - ${powerLevel}`}
+                            {`${getPowerLabel(powerLevel) || 'دنبال کننده'} - ${powerLevel}`}
                           </Text>
                         </Button>
                       )}
