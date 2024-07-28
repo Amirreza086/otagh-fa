@@ -96,7 +96,7 @@ function InviteCard({ room, userId, direct, compact, onNavigate }: InviteCardPro
       <Box gap="200" alignItems="Baseline">
         <Box grow="Yes">
           <Text size="T200" priority="300" truncate>
-            Invited by <b>{senderName}</b>
+            دعوت شده توسط <b>{senderName}</b>
           </Text>
         </Box>
         <Box shrink="No">
@@ -172,7 +172,7 @@ function InviteCard({ room, userId, direct, compact, onNavigate }: InviteCardPro
               disabled={joining || leaving}
               before={leaving ? <Spinner variant="Secondary" size="100" /> : undefined}
             >
-              <Text size="B300">Decline</Text>
+              <Text size="B300">نپذیرفتن</Text>
             </Button>
             <Button
               onClick={join}
@@ -183,7 +183,7 @@ function InviteCard({ room, userId, direct, compact, onNavigate }: InviteCardPro
               disabled={joining || leaving}
               before={joining ? <Spinner variant="Primary" fill="Soft" size="100" /> : undefined}
             >
-              <Text size="B300">Accept</Text>
+              <Text size="B300">پذیرفتن</Text>
             </Button>
           </Box>
         </Box>
@@ -229,7 +229,7 @@ export function Invites() {
         <Box grow="Yes" justifyContent="Center" alignItems="Center" gap="200">
           <Icon size="400" src={Icons.Mail} />
           <Text size="H3" truncate>
-            Invitations
+            دعوت نامه ها
           </Text>
         </Box>
       </PageHeader>
@@ -240,7 +240,7 @@ export function Invites() {
               <Box ref={containerRef} direction="Column" gap="600">
                 {directInvites.length > 0 && (
                   <Box direction="Column" gap="200">
-                    <Text size="H4">Direct Messages</Text>
+                    <Text size="H4">پیام های مستقیم</Text>
                     <Box direction="Column" gap="100">
                       {directInvites.map((roomId) => renderInvite(roomId, true, navigateRoom))}
                     </Box>
@@ -248,7 +248,7 @@ export function Invites() {
                 )}
                 {spaceInvites.length > 0 && (
                   <Box direction="Column" gap="200">
-                    <Text size="H4">Spaces</Text>
+                    <Text size="H4">فضاها</Text>
                     <Box direction="Column" gap="100">
                       {spaceInvites.map((roomId) => renderInvite(roomId, false, navigateSpace))}
                     </Box>
@@ -256,7 +256,7 @@ export function Invites() {
                 )}
                 {roomInvites.length > 0 && (
                   <Box direction="Column" gap="200">
-                    <Text size="H4">Rooms</Text>
+                    <Text size="H4">اتاق ها</Text>
                     <Box direction="Column" gap="100">
                       {roomInvites.map((roomId) => renderInvite(roomId, false, navigateRoom))}
                     </Box>
@@ -272,9 +272,9 @@ export function Invites() {
                         direction="Column"
                         gap="200"
                       >
-                        <Text>No Pending Invitations</Text>
+                        <Text>بدون دعوت نامه معلق</Text>
                         <Text size="T200">
-                          You don&apos;t have any new pending invitations to display yet.
+                          شما هنوز هیچ دعوت نامه معلق جدیدی برای نمایش ندارید
                         </Text>
                       </SequenceCard>
                     </div>
