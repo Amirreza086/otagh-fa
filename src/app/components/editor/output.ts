@@ -52,7 +52,7 @@ const elementToCustomHtml = (node: CustomElement, children: string): string => {
       return `<ul>${children}</ul>`;
 
     case BlockType.Mention:
-      return `<a href="https://matrix.to/#/${encodeURIComponent(node.id)}">${sanitizeText(
+      return `<a href="https://xmr.se/#/${encodeURIComponent(node.id)}">${sanitizeText(
         node.name
       )}</a>`;
     case BlockType.Emoticon:
