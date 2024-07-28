@@ -59,7 +59,7 @@ export const RoomIntro = as<'div', RoomIntroProps>(({ room, ...props }, ref) => 
             {name}
           </Text>
           <Text size="T400" priority="400">
-            {typeof topic === 'string' ? topic : 'This is the beginning of conversation.'}
+            {typeof topic === 'string' ? topic : 'این شروع گفتگو است.'}
           </Text>
           {creatorName && ts && (
             <Text size="T200" priority="300">
@@ -76,7 +76,7 @@ export const RoomIntro = as<'div', RoomIntroProps>(({ room, ...props }, ref) => 
             size="300"
             radii="300"
           >
-            <Text size="B300">Invite Member</Text>
+            <Text size="B300">دعوت کاربر</Text>
           </Button>
           {typeof prevRoomId === 'string' &&
             (mx.getRoom(prevRoomId)?.getMyMembership() === Membership.Join ? (
@@ -87,7 +87,7 @@ export const RoomIntro = as<'div', RoomIntroProps>(({ room, ...props }, ref) => 
                 fill="Soft"
                 radii="300"
               >
-                <Text size="B300">Open Old Room</Text>
+                <Text size="B300">بازکردن اتاق قدیمی</Text>
               </Button>
             ) : (
               <Button
@@ -103,7 +103,7 @@ export const RoomIntro = as<'div', RoomIntroProps>(({ room, ...props }, ref) => 
                   ) : undefined
                 }
               >
-                <Text size="B300">Join Old Room</Text>
+                <Text size="B300">پیوستن به اتاق قدیمی</Text>
               </Button>
             ))}
         </Box>
