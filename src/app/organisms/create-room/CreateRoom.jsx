@@ -90,11 +90,11 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
         navigateRoom(data.room_id);
       }
     } catch (e) {
-      if (e.message === 'M_UNKNOWN: Invalid characters in room alias') {
-        setCreatingError('ERROR: Invalid characters in address');
+      if (e.message === 'M_UNKNOWN: نویسه‌های نامعتبر در نام مستعار اتاق') {
+        setCreatingError('ERROR: نویسه های نامعتبر در آدرس');
         setIsValidAddress(false);
-      } else if (e.message === 'M_ROOM_IN_USE: Room alias already taken') {
-        setCreatingError('ERROR: This address is already in use');
+      } else if (e.message === 'M_ROOM_IN_USE: نام مستعار اتاق قبلاً گرفته شده است') {
+        setCreatingError('ERROR: این آدرس در حال حاضر در حال استفاده است');
         setIsValidAddress(false);
       } else setCreatingError(e.message);
       setIsCreatingRoom(false);
@@ -124,9 +124,9 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
   const joinRules = ['invite', 'restricted', 'public'];
   const joinRuleShortText = ['Private', 'Restricted', 'Public'];
   const joinRuleText = [
-    'Private (invite only)',
-    'Restricted (space member can join)',
-    'Public (anyone can join)',
+    'خصوصی (فقط دعوت)',
+    'محدود شده (عضو فضا می تواند بپیوندد)',
+    'عمومی (هر کسی می تواند بپیوندد)',
   ];
   const jrRoomIC = [HashLockIC, HashIC, HashGlobeIC];
   const jrSpaceIC = [SpaceLockIC, SpaceIC, SpaceGlobeIC];
@@ -165,13 +165,13 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
             </Button>
           }
           content={
-            <Text variant="b3">{`Select who can join this ${isSpace ? 'space' : 'room'}.`}</Text>
+            <Text variant="b3">{`انتخاب کنید چه کسی می تواند به این بپیوندد ${isSpace ? 'فضا' : 'اتاق'}.`}</Text>
           }
         />
         {joinRule === 'public' && (
           <div>
             <Text className="create-room__address__label" variant="b2">
-              {isSpace ? 'Space address' : 'Room address'}
+              {isSpace ? 'آدرس فضا' : 'آدرس اتاق'}
             </Text>
             <div className="create-room__address">
               <Text variant="b1">#</Text>
@@ -189,7 +189,7 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
               <Text className="create-room__address__tip" variant="b3">
                 <span
                   style={{ color: 'var(--bg-danger)' }}
-                >{`#${addressValue}:${userHs} is already in use`}</span>
+                >{`#${addressValue}:${userHs} در حال حاضر در حال استفاده است`}</span>
               </Text>
             )}
           </div>
@@ -200,7 +200,7 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
             options={<Toggle isActive={isEncrypted} onToggle={setIsEncrypted} />}
             content={
               <Text variant="b3">
-                You can’t disable this later. Bridges & most bots won’t work yet.
+                بعداً نمی‌توانید این را غیرفعال کنید. پل‌ها و بیشتر ربات‌ها هنوز کار نمی‌کنند.
               </Text>
             }
           />
@@ -210,30 +210,30 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
           options={
             <SegmentControl
               selected={roleIndex}
-              segments={[{ text: 'Admin' }, { text: 'Founder' }]}
+              segments={[{ text: 'مدیر' }, { text: 'موسس' }]}
               onSelect={setRoleIndex}
             />
           }
           content={
-            <Text variant="b3">Selecting Admin sets 100 power level whereas Founder sets 101.</Text>
+            <Text variant="b3">انتخاب مدیر 100 سطح قدرت را تنظیم می کند در حالی که موسس 101 را تنظیم می کند.</Text>
           }
         />
         <Input name="topic" minHeight={174} resizable label="Topic (optional)" />
         <div className="create-room__name-wrapper">
-          <Input name="name" label={`${isSpace ? 'Space' : 'Room'} name`} required />
+          <Input name="name" label={`${isSpace ? 'فضا' : 'اتاق'} نام`} required />
           <Button
             disabled={isValidAddress === false || isCreatingRoom}
             iconSrc={isSpace ? SpacePlusIC : HashPlusIC}
             type="submit"
             variant="primary"
           >
-            Create
+            ساختن
           </Button>
         </div>
         {isCreatingRoom && (
           <div className="create-room__loading">
             <Spinner size="small" />
-            <Text>{`Creating ${isSpace ? 'space' : 'room'}...`}</Text>
+            <Text>{`Creating ${isSpace ? 'فضا' : 'اتاق'}...`}</Text>
           </div>
         )}
         {typeof creatingError === 'string' && (
@@ -288,7 +288,7 @@ function CreateRoom() {
         <Text variant="s1" weight="medium" primary>
           {parentId ? room.name : 'Home'}
           <span style={{ color: 'var(--tc-surface-low)' }}>
-            {` — create ${isSpace ? 'space' : 'room'}`}
+            {` — ساختن ${isSpace ? 'فضا' : 'اتاق'}`}
           </span>
         </Text>
       }
