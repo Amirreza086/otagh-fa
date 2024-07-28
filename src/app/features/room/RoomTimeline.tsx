@@ -1270,7 +1270,7 @@ export function RoomTimeline({ room, eventId, roomInputRef, editor }: RoomTimeli
                 <Box grow="Yes" direction="Column">
                   <Text size="T300" priority="300">
                     <b>{senderName}</b>
-                    {' changed room name'}
+                    {' نام اتاق را تغییر داد'}
                   </Text>
                 </Box>
               }
@@ -1304,7 +1304,7 @@ export function RoomTimeline({ room, eventId, roomInputRef, editor }: RoomTimeli
                 <Box grow="Yes" direction="Column">
                   <Text size="T300" priority="300">
                     <b>{senderName}</b>
-                    {' changed room topic'}
+                    {' موضوع اتاق را تغییر داد'}
                   </Text>
                 </Box>
               }
@@ -1338,7 +1338,7 @@ export function RoomTimeline({ room, eventId, roomInputRef, editor }: RoomTimeli
                 <Box grow="Yes" direction="Column">
                   <Text size="T300" priority="300">
                     <b>{senderName}</b>
-                    {' changed room avatar'}
+                    {' آواتار اتاق را تغییر داد'}
                   </Text>
                 </Box>
               }
@@ -1374,7 +1374,7 @@ export function RoomTimeline({ room, eventId, roomInputRef, editor }: RoomTimeli
               <Box grow="Yes" direction="Column">
                 <Text size="T300" priority="300">
                   <b>{senderName}</b>
-                  {' sent '}
+                  {' فرستنده '}
                   <code className={customHtmlCss.Code}>{mEvent.getType()}</code>
                   {' state event'}
                 </Text>
@@ -1415,7 +1415,7 @@ export function RoomTimeline({ room, eventId, roomInputRef, editor }: RoomTimeli
               <Box grow="Yes" direction="Column">
                 <Text size="T300" priority="300">
                   <b>{senderName}</b>
-                  {' sent '}
+                  {' فرستنده '}
                   <code className={customHtmlCss.Code}>{mEvent.getType()}</code>
                   {' event'}
                 </Text>
@@ -1475,7 +1475,7 @@ export function RoomTimeline({ room, eventId, roomInputRef, editor }: RoomTimeli
         <MessageBase space={messageSpacing}>
           <TimelineDivider style={{ color: color.Success.Main }} variant="Inherit">
             <Badge as="span" size="500" variant="Success" fill="Solid" radii="300">
-              <Text size="L400">New Messages</Text>
+              <Text size="L400">پیام جدید</Text>
             </Badge>
           </TimelineDivider>
         </MessageBase>
@@ -1525,7 +1525,7 @@ export function RoomTimeline({ room, eventId, roomInputRef, editor }: RoomTimeli
             before={<Icon size="50" src={Icons.MessageUnread} />}
             onClick={handleJumpToUnread}
           >
-            <Text size="L400">Jump to Unread</Text>
+            <Text size="L400">پرش به خوانده نشده</Text>
           </Chip>
 
           <Chip
@@ -1535,7 +1535,7 @@ export function RoomTimeline({ room, eventId, roomInputRef, editor }: RoomTimeli
             before={<Icon size="50" src={Icons.CheckTwice} />}
             onClick={handleMarkAsRead}
           >
-            <Text size="L400">Mark as Read</Text>
+            <Text size="L400">علامت زدن به عنوان شده شده</Text>
           </Chip>
         </TimelineFloat>
       )}
@@ -1603,7 +1603,7 @@ export function RoomTimeline({ room, eventId, roomInputRef, editor }: RoomTimeli
             before={<Icon size="50" src={Icons.ArrowBottom} />}
             onClick={handleJumpToLatest}
           >
-            <Text size="L400">Jump to Latest</Text>
+            <Text size="L400">پرش به آخرین</Text>
           </Chip>
         </TimelineFloat>
       )}
