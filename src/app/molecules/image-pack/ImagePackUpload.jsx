@@ -59,10 +59,10 @@ function ImagePackUpload({ onUpload }) {
               <Text>{imgFile.name}</Text>
             </div>
           )
-          : <Button onClick={() => inputRef.current.click()}>Import image</Button>
+          : <Button onClick={() => inputRef.current.click()}>وارد کردن تصویر</Button>
       }
       <Input forwardRef={shortcodeRef} name="shortcodeInput" placeholder="shortcode" required />
-      <Button disabled={progress} variant="primary" type="submit">{progress ? 'Uploading...' : 'Upload'}</Button>
+      <Button disabled={progress} variant="primary" type="submit">{progress ? 'در حال آپلود' : 'آپلود...'}</Button>
     </form>
   );
 }
