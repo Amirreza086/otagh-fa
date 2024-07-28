@@ -33,10 +33,10 @@ export function RoomTombstone({ roomId, body, replacementRoomId }: RoomTombstone
   return (
     <RoomInputPlaceholder alignItems="Center" gap="600" className={css.RoomTombstone}>
       <Box direction="Column" grow="Yes">
-        <Text size="T400">{body || 'This room has been replaced and is no longer active.'}</Text>
+        <Text size="T400">{body || 'این اتاق جایگزین شده است و دیگر فعال نیست.'}</Text>
         {joinState.status === AsyncStatus.Error && (
           <Text style={{ color: color.Critical.Main }} size="T200">
-            {(joinState.error as any)?.message ?? 'Failed to join replacement room!'}
+            {(joinState.error as any)?.message ?? 'به اتاق تعویض شده ملحق نشد!'}
           </Text>
         )}
       </Box>
@@ -44,7 +44,7 @@ export function RoomTombstone({ roomId, body, replacementRoomId }: RoomTombstone
         {replacementRoom?.getMyMembership() === Membership.Join ||
         joinState.status === AsyncStatus.Success ? (
           <Button onClick={handleOpen} size="300" variant="Success" fill="Solid" radii="300">
-            <Text size="B300">Open New Room</Text>
+            <Text size="B300">بازکردن اتاق جدید</Text>
           </Button>
         ) : (
           <Button
@@ -60,7 +60,7 @@ export function RoomTombstone({ roomId, body, replacementRoomId }: RoomTombstone
             }
             disabled={joinState.status === AsyncStatus.Loading}
           >
-            <Text size="B300">Join New Room</Text>
+            <Text size="B300">پیوستن به اتاق جدید</Text>
           </Button>
         )}
       </Box>
