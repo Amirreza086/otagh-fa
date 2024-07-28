@@ -10,10 +10,10 @@ function NotificationSelector({
 }) {
   return (
     <div>
-      <MenuHeader>Notification</MenuHeader>
-      <MenuItem iconSrc={value === 'off' ? CheckIC : null} variant={value === 'off' ? 'positive' : 'surface'} onClick={() => onSelect('off')}>Off</MenuItem>
-      <MenuItem iconSrc={value === 'on' ? CheckIC : null} variant={value === 'on' ? 'positive' : 'surface'} onClick={() => onSelect('on')}>On</MenuItem>
-      <MenuItem iconSrc={value === 'noisy' ? CheckIC : null} variant={value === 'noisy' ? 'positive' : 'surface'} onClick={() => onSelect('noisy')}>Noisy</MenuItem>
+      <MenuHeader>اعلانات</MenuHeader>
+      <MenuItem iconSrc={value === 'off' ? CheckIC : null} variant={value === 'off' ? 'positive' : 'surface'} onClick={() => onSelect('off')}>خاموش</MenuItem>
+      <MenuItem iconSrc={value === 'on' ? CheckIC : null} variant={value === 'on' ? 'positive' : 'surface'} onClick={() => onSelect('on')}>روشن</MenuItem>
+      <MenuItem iconSrc={value === 'noisy' ? CheckIC : null} variant={value === 'noisy' ? 'positive' : 'surface'} onClick={() => onSelect('noisy')}>پر سر و صدا</MenuItem>
     </div>
   );
 }
