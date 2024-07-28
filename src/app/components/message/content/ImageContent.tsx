@@ -146,7 +146,7 @@ export const ImageContent = as<'div', ImageContentProps>(
               onClick={loadSrc}
               before={<Icon size="Inherit" src={Icons.Photo} filled />}
             >
-              <Text size="B300">View</Text>
+              <Text size="B300">نمایش</Text>
             </Button>
           </Box>
         )}
@@ -174,7 +174,7 @@ export const ImageContent = as<'div', ImageContentProps>(
             <TooltipProvider
               tooltip={
                 <Tooltip variant="Critical">
-                  <Text>Failed to load image!</Text>
+                  <Text>تصویر بارگیری نشد!</Text>
                 </Tooltip>
               }
               position="Top"
@@ -191,7 +191,7 @@ export const ImageContent = as<'div', ImageContentProps>(
                   onClick={handleRetry}
                   before={<Icon size="Inherit" src={Icons.Warning} filled />}
                 >
-                  <Text size="B300">Retry</Text>
+                  <Text size="B300">تلاش دوباره</Text>
                 </Button>
               )}
             </TooltipProvider>
