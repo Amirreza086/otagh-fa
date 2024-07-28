@@ -172,7 +172,7 @@ export const MessageAllReactionItem = as<
         aria-pressed={open}
       >
         <Text className={css.MessageMenuItemText} as="span" size="T300" truncate>
-          View Reactions
+          مشاهده واکنش ها
         </Text>
       </MenuItem>
     </>
@@ -222,7 +222,7 @@ export const MessageReadReceiptItem = as<
         aria-pressed={open}
       >
         <Text className={css.MessageMenuItemText} as="span" size="T300" truncate>
-          Read Receipts
+          خواندن رسیدها
         </Text>
       </MenuItem>
     </>
@@ -305,7 +305,7 @@ export const MessageSourceCodeItem = as<
         aria-pressed={open}
       >
         <Text className={css.MessageMenuItemText} as="span" size="T300" truncate>
-          View Source
+          مشاهده سورس
         </Text>
       </MenuItem>
     </>
@@ -351,7 +351,7 @@ export const MessageCopyLinkItem = as<
       ref={ref}
     >
       <Text className={css.MessageMenuItemText} as="span" size="T300" truncate>
-        Copy Link
+        کپی لینک
       </Text>
     </MenuItem>
   );
@@ -418,7 +418,7 @@ export const MessageDeleteItem = as<
                 size="500"
               >
                 <Box grow="Yes">
-                  <Text size="H4">Delete Message</Text>
+                  <Text size="H4">حذف پیام</Text>
                 </Box>
                 <IconButton size="300" onClick={handleClose} radii="300">
                   <Icon src={Icons.Cross} />
@@ -432,19 +432,19 @@ export const MessageDeleteItem = as<
                 gap="400"
               >
                 <Text priority="400">
-                  This action is irreversible! Are you sure that you want to delete this message?
+                  این عمل غیرقابل بازگشت است! آیا مطمئن هستید که می خواهید این پیام را حذف کنید؟
                 </Text>
                 <Box direction="Column" gap="100">
                   <Text size="L400">
                     Reason{' '}
                     <Text as="span" size="T200">
-                      (optional)
+                      (اختیاری)
                     </Text>
                   </Text>
                   <Input name="reasonInput" variant="Background" />
                   {deleteState.status === AsyncStatus.Error && (
                     <Text style={{ color: color.Critical.Main }} size="T300">
-                      Failed to delete message! Please try again.
+                      پیام حذف نشد! لطفا دوباره تلاش کنید.
                     </Text>
                   )}
                 </Box>
@@ -459,7 +459,7 @@ export const MessageDeleteItem = as<
                   aria-disabled={deleteState.status === AsyncStatus.Loading}
                 >
                   <Text size="B400">
-                    {deleteState.status === AsyncStatus.Loading ? 'Deleting...' : 'Delete'}
+                    {deleteState.status === AsyncStatus.Loading ? 'در حال حذف شدن...' : 'حذف شد'}
                   </Text>
                 </Button>
               </Box>
@@ -479,7 +479,7 @@ export const MessageDeleteItem = as<
         ref={ref}
       >
         <Text className={css.MessageMenuItemText} as="span" size="T300" truncate>
-          Delete
+          حذف کردن
         </Text>
       </Button>
     </>
@@ -548,7 +548,7 @@ export const MessageReportItem = as<
                 size="500"
               >
                 <Box grow="Yes">
-                  <Text size="H4">Report Message</Text>
+                  <Text size="H4">گزارش پیام</Text>
                 </Box>
                 <IconButton size="300" onClick={handleClose} radii="300">
                   <Icon src={Icons.Cross} />
@@ -562,20 +562,19 @@ export const MessageReportItem = as<
                 gap="400"
               >
                 <Text priority="400">
-                  Report this message to server, which may then notify the appropriate people to
-                  take action.
+                  این پیام را به سرور گزارش می دهید، سپس ممکن است افراد مربوطه را برای انجام اقدام آگاه کند.
                 </Text>
                 <Box direction="Column" gap="100">
-                  <Text size="L400">Reason</Text>
+                  <Text size="L400">دلیل</Text>
                   <Input name="reasonInput" variant="Background" required />
                   {reportState.status === AsyncStatus.Error && (
                     <Text style={{ color: color.Critical.Main }} size="T300">
-                      Failed to report message! Please try again.
+                      پیام گزارش نشد! لطفا دوباره تلاش کنید.
                     </Text>
                   )}
                   {reportState.status === AsyncStatus.Success && (
                     <Text style={{ color: color.Success.Main }} size="T300">
-                      Message has been reported to server.
+                      پیام به سرور گزارش شد.
                     </Text>
                   )}
                 </Box>
@@ -593,7 +592,7 @@ export const MessageReportItem = as<
                   }
                 >
                   <Text size="B400">
-                    {reportState.status === AsyncStatus.Loading ? 'Reporting...' : 'Report'}
+                    {reportState.status === AsyncStatus.Loading ? 'در حال گزارش...' : 'گزارش شد'}
                   </Text>
                 </Button>
               </Box>
@@ -613,7 +612,7 @@ export const MessageReportItem = as<
         ref={ref}
       >
         <Text className={css.MessageMenuItemText} as="span" size="T300" truncate>
-          Report
+          گزارش
         </Text>
       </Button>
     </>
@@ -907,7 +906,7 @@ export const Message = as<'div', MessageProps>(
                                 size="T300"
                                 truncate
                               >
-                                Add Reaction
+                                اضافه کردن واکنش
                               </Text>
                             </MenuItem>
                           )}
@@ -934,7 +933,7 @@ export const Message = as<'div', MessageProps>(
                               size="T300"
                               truncate
                             >
-                              Reply
+                              پاسخ دادن
                             </Text>
                           </MenuItem>
                           {canEditEvent(mx, mEvent) && onEditId && (
@@ -954,7 +953,7 @@ export const Message = as<'div', MessageProps>(
                                 size="T300"
                                 truncate
                               >
-                                Edit Message
+                                ویرایش پیام
                               </Text>
                             </MenuItem>
                           )}
