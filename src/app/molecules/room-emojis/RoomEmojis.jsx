@@ -96,10 +96,10 @@ function RoomEmojis({ roomId }) {
     <div className="room-emojis">
       { canChange && (
         <div className="room-emojis__add-pack">
-          <MenuHeader>Create Pack</MenuHeader>
+          <MenuHeader>ساخت بسته</MenuHeader>
           <form onSubmit={handlePackCreate}>
             <Input name="nameInput" placeholder="Pack Name" required />
-            <Button variant="primary" type="submit">Create pack</Button>
+            <Button variant="primary" type="submit">ساخت بسته</Button>
           </form>
         </div>
       )}
@@ -114,7 +114,7 @@ function RoomEmojis({ roomId }) {
             />
           )) : (
             <div className="room-emojis__empty">
-              <Text>No emoji or sticker pack.</Text>
+              <Text>بسته ایموجی یا استیکر موجود نیست.</Text>
             </div>
           )
       }
