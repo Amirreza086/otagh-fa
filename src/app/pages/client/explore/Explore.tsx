@@ -94,7 +94,7 @@ export function AddServer() {
                 size="500"
               >
                 <Box grow="Yes">
-                  <Text size="H4">Add Server</Text>
+                  <Text size="H4">اضافه کردن سرور</Text>
                 </Box>
                 <IconButton size="300" onClick={() => setDialog(false)} radii="300">
                   <Icon src={Icons.Cross} />
@@ -107,13 +107,13 @@ export function AddServer() {
                 direction="Column"
                 gap="400"
               >
-                <Text priority="400">Add server name to explore public communities.</Text>
+                <Text priority="400">نام سرور را برای کاوش در جوامع عمومی اضافه کنید</Text>
                 <Box direction="Column" gap="100">
-                  <Text size="L400">Server Name</Text>
+                  <Text size="L400">آدرس سرور</Text>
                   <Input ref={serverInputRef} name="serverInput" variant="Background" required />
                   {exploreState.status === AsyncStatus.Error && (
                     <Text style={{ color: color.Critical.Main }} size="T300">
-                      Failed to load public rooms. Please try again.
+                      بارگیری اتاق های عمومی انجام نشد. لطفا دوباره تلاش کنید
                     </Text>
                   )}
                 </Box>
@@ -128,11 +128,11 @@ export function AddServer() {
                     }
                     aria-disabled={exploreState.status === AsyncStatus.Loading}
                   >
-                    <Text size="B400">Save</Text>
+                    <Text size="B400">ذخیره کردن</Text>
                   </Button> */}
 
                   <Button type="submit" onClick={handleView} variant="Secondary" fill="Soft">
-                    <Text size="B400">View</Text>
+                    <Text size="B400">مشاهده</Text>
                   </Button>
                 </Box>
               </Box>
@@ -148,7 +148,7 @@ export function AddServer() {
         onClick={() => setDialog(true)}
       >
         <Text size="B300" truncate>
-          Add Server
+          اضافه کردن سرور
         </Text>
       </Button>
     </>
@@ -173,7 +173,7 @@ export function Explore() {
         <Box grow="Yes" gap="300">
           <Box grow="Yes">
             <Text size="H4" truncate>
-              Explore Community
+              کاوش انجمن
             </Text>
           </Box>
         </Box>
@@ -191,7 +191,7 @@ export function Explore() {
                     </Avatar>
                     <Box as="span" grow="Yes">
                       <Text as="span" size="Inherit" truncate>
-                        Featured
+                        ویژه
                       </Text>
                     </Box>
                   </Box>
@@ -229,7 +229,7 @@ export function Explore() {
             <NavCategory>
               <NavCategoryHeader>
                 <Text size="O400" style={{ paddingLeft: config.space.S200 }}>
-                  Servers
+                  سرورها
                 </Text>
               </NavCategoryHeader>
               {servers.map((server) => (
