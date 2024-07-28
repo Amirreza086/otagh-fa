@@ -22,14 +22,14 @@ const failedDialog = () => {
   const renderFailure = (requestClose) => (
     <div className="cross-signing__failure">
       <Text variant="h1">❌</Text>
-      <Text weight="medium">Failed to setup cross signing. Please try again.</Text>
-      <Button onClick={requestClose}>Close</Button>
+      <Text weight="medium">امضای متقاطع تنظیم نشد. لطفا دوباره تلاش کنید.</Text>
+      <Button onClick={requestClose}>بستن</Button>
     </div>
   );
 
   openReusableDialog(
     <Text variant="s1" weight="medium">
-      Setup cross signing
+      راه اندازی امضای متقاطع
     </Text>,
     renderFailure
   );
@@ -48,13 +48,13 @@ const securityKeyDialog = (key) => {
 
   const renderSecurityKey = () => (
     <div className="cross-signing__key">
-      <Text weight="medium">Please save this security key somewhere safe.</Text>
+      <Text weight="medium">لطفاً این کلید امنیتی را در جایی امن ذخیره کنید.</Text>
       <Text className="cross-signing__key-text">{key.encodedPrivateKey}</Text>
       <div className="cross-signing__key-btn">
         <Button variant="primary" onClick={() => copyKey(key)}>
-          Copy
+          کپی
         </Button>
-        <Button onClick={() => downloadKey(key)}>Download</Button>
+        <Button onClick={() => downloadKey(key)}>دانلود</Button>
       </div>
     </div>
   );
@@ -64,7 +64,7 @@ const securityKeyDialog = (key) => {
 
   openReusableDialog(
     <Text variant="s1" weight="medium">
-      Security Key
+      کلید امنیتی
     </Text>,
     () => renderSecurityKey()
   );
@@ -105,17 +105,17 @@ function CrossSigningSetup() {
   const validator = (values) => {
     const errors = {};
     if (values.phrase === '12345678') {
-      errors.phrase = 'How about 87654321 ?';
+      errors.phrase = 'درباره 87654321 ?';
     }
     if (values.phrase === '87654321') {
-      errors.phrase = 'Your are playing with 🔥';
+      errors.phrase = 'داری باهاش ​​بازی میکنی 🔥';
     }
     const PHRASE_REGEX = /^([^\s]){8,127}$/;
     if (values.phrase.length > 0 && !PHRASE_REGEX.test(values.phrase)) {
-      errors.phrase = 'Phrase must contain 8-127 characters with no space.';
+      errors.phrase = 'عبارت باید دارای 8 تا 127 کاراکتر بدون فاصله باشد';
     }
     if (values.confirmPhrase.length > 0 && values.confirmPhrase !== values.phrase) {
-      errors.confirmPhrase = "Phrase don't match.";
+      errors.confirmPhrase = "عبارت مطابقت ندارد.";
     }
     return errors;
   };
@@ -124,17 +124,16 @@ function CrossSigningSetup() {
     <div className="cross-signing__setup">
       <div className="cross-signing__setup-entry">
         <Text>
-          We will generate a <b>Security Key</b>, which you can use to manage messages backup and
-          session verification.
+          ما یک را تولید خواهیم کرد <b>کلید امنیتی</b>, که می‌توانید برای مدیریت پشتیبان‌گیری پیام‌ها و تأیید جلسه استفاده کنید
         </Text>
         {genWithPhrase !== false && (
           <Button variant="primary" onClick={() => setup()} disabled={genWithPhrase !== undefined}>
-            Generate Key
+            تولید کلید
           </Button>
         )}
         {genWithPhrase === false && <Spinner size="small" />}
       </div>
-      <Text className="cross-signing__setup-divider">OR</Text>
+      <Text className="cross-signing__setup-divider">یا</Text>
       <Formik
         initialValues={initialValues}
         onSubmit={(values) => setup(values.phrase)}
@@ -147,9 +146,8 @@ function CrossSigningSetup() {
             disabled={genWithPhrase !== undefined}
           >
             <Text>
-              Alternatively you can also set a <b>Security Phrase </b>
-              so you don't have to remember long Security Key, and optionally save the Key as
-              backup.
+              همچنین می توانید را تنظیم کنید <b>عبارت امنیتی </b>
+              بنابراین لازم نیست کلید امنیتی طولانی را به خاطر بسپارید و به صورت اختیاری کلید را به عنوان پشتیبان ذخیره کنید.
             </Text>
             <Input
               name="phrase"
@@ -181,7 +179,7 @@ function CrossSigningSetup() {
             )}
             {genWithPhrase !== true && (
               <Button variant="primary" type="submit" disabled={genWithPhrase !== undefined}>
-                Set Phrase & Generate Key
+                تنظیم عبارت و تولید کلید
               </Button>
             )}
             {genWithPhrase === true && <Spinner size="small" />}
@@ -195,7 +193,7 @@ function CrossSigningSetup() {
 const setupDialog = () => {
   openReusableDialog(
     <Text variant="s1" weight="medium">
-      Setup cross signing
+      امضای متقاطع را تنظیم کنید
     </Text>,
     () => <CrossSigningSetup />
   );
@@ -205,14 +203,13 @@ function CrossSigningReset() {
   return (
     <div className="cross-signing__reset">
       <Text variant="h1">✋🧑‍🚒🤚</Text>
-      <Text weight="medium">Resetting cross-signing keys is permanent.</Text>
+      <Text weight="medium">بازنشانی کلیدهای امضای متقاطع دائمی است.</Text>
       <Text>
-        Anyone you have verified with will see security alerts and your message backup will be lost.
-        You almost certainly do not want to do this, unless you have lost <b>Security Key</b> or{' '}
-        <b>Phrase</b> and every session you can cross-sign from.
+        هرکسی که با آنها تأیید شده است هشدارهای امنیتی را می بیند و پشتیبان پیام شما از بین می رود. تقریباً مطمئناً نمی خواهید این کار را انجام دهید، مگر اینکه از دست داده باشید <b>کلید امنیتی</b> یا{' '}
+        <b>عبارت امنیتی</b> و هر جلسه ای که می توانید از آن امضا بگیرید.
       </Text>
       <Button variant="danger" onClick={setupDialog}>
-        Reset
+        بازنشانی
       </Button>
     </div>
   );
@@ -221,7 +218,7 @@ function CrossSigningReset() {
 const resetDialog = () => {
   openReusableDialog(
     <Text variant="s1" weight="medium">
-      Reset cross signing
+      بازنشانی امضای متقاطع
     </Text>,
     () => <CrossSigningReset />
   );
@@ -234,18 +231,17 @@ function CrossSignin() {
       title="Cross signing"
       content={
         <Text variant="b3">
-          Setup to verify and keep track of all your sessions. Also required to backup encrypted
-          message.
+          برای تأیید و پیگیری همه جلسات خود تنظیم کنید. همچنین برای تهیه نسخه پشتیبان از پیام رمزگذاری شده مورد نیاز است
         </Text>
       }
       options={
         isCSEnabled ? (
           <Button variant="danger" onClick={resetDialog}>
-            Reset
+            بازنشانی
           </Button>
         ) : (
           <Button variant="primary" onClick={setupDialog}>
-            Setup
+            نصب
           </Button>
         )
       }
