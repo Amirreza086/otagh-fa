@@ -140,7 +140,7 @@ export function AuthLayout() {
           <Box className={css.AuthCardContent} direction="Column">
             <Box direction="Column" gap="100">
               <Text as="label" size="L400" priority="300">
-                سرور مرکز
+                سرور مرکزی
               </Text>
               <ServerPicker
                 server={server}
@@ -150,14 +150,14 @@ export function AuthLayout() {
               />
             </Box>
             {discoveryState.status === AsyncStatus.Loading && (
-              <AuthLayoutLoading message="در حال بررسی سرور مرکز..." />
+              <AuthLayoutLoading message="در حال بررسی سرور مرکزی..." />
             )}
             {discoveryState.status === AsyncStatus.Error && (
-              <AuthLayoutError message="سرور مرکز نامعتبر است." />
+              <AuthLayoutError message="سرور مرکزی نامعتبر است." />
             )}
             {autoDiscoveryError?.action === AutoDiscoveryAction.FAIL_PROMPT && (
               <AuthLayoutError
-                message={`Failed to connect. Homeserver configuration found with ${autoDiscoveryError.host} appears unusable.`}
+                message={`ناتوان در اتصال. پیکربندی سرور خانگی با ${autoDiscoveryError.host} غیر قابل استفاده به نظر می رسد.`}
               />
             )}
             {autoDiscoveryError?.action === AutoDiscoveryAction.FAIL_ERROR && (
@@ -174,17 +174,17 @@ export function AuthLayout() {
                       />
                     )}
                     error={() => (
-                      <AuthLayoutError message="اتصال ناموفق ، لطفا سرور مرکز را بررسی کنید و دوباره امتحان کنید." />
+                      <AuthLayoutError message="اتصال ناموفق ، لطفا سرور مرکزی را بررسی کنید و دوباره امتحان کنید." />
                     )}
                   >
                     {(specVersions) => (
                       <SpecVersionsProvider value={specVersions}>
                         <AuthFlowsLoader
                           fallback={() => (
-                            <AuthLayoutLoading message="Loading authentication flow..." />
+                            <AuthLayoutLoading message="در حال بارگیری جریان احراز هویت..." />
                           )}
                           error={() => (
-                            <AuthLayoutError message="Failed to get authentication flow information." />
+                            <AuthLayoutError message="اطلاعات جریان احراز هویت دریافت نشد." />
                           )}
                         >
                           {(authFlows) => (
