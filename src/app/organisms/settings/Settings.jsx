@@ -410,7 +410,7 @@ function AboutSection() {
           <img width="60" height="60" src={CinnySVG} alt="Otagh logo" />
           <div>
             <Text variant="h2" weight="medium">
-              پیام رسان  غیرمتمرکز اتاق
+              پیام رسان اتاق
               <span
                 className="text text-b3"
                 style={{ margin: '0 var(--sp-extra-tight)' }}
