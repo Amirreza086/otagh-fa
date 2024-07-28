@@ -44,7 +44,7 @@ export function SyncStatus({ mx }: SyncStatusProps) {
           alignItems="Center"
           justifyContent="Center"
         >
-          <Text size="L400">Connecting...</Text>
+          <Text size="L400">در حال اتصال...</Text>
         </Box>
         <Line variant="Success" size="300" />
       </Box>
@@ -60,7 +60,7 @@ export function SyncStatus({ mx }: SyncStatusProps) {
           alignItems="Center"
           justifyContent="Center"
         >
-          <Text size="L400">Connection Lost! Reconnecting...</Text>
+          <Text size="L400">اتصال قطع شد! در حال اتصال مجدد...</Text>
         </Box>
         <Line variant="Warning" size="300" />
       </Box>
@@ -76,7 +76,7 @@ export function SyncStatus({ mx }: SyncStatusProps) {
           alignItems="Center"
           justifyContent="Center"
         >
-          <Text size="L400">Connection Lost!</Text>
+          <Text size="L400">اتصال قطع شد!</Text>
         </Box>
         <Line variant="Critical" size="300" />
       </Box>
