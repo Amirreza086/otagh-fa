@@ -73,8 +73,8 @@ function ImagePackProfile({
                 <Input name="nameInput" label="Name" value={displayName} required />
                 <Input name="attributionInput" label="Attribution" value={attribution} resizable />
                 <div>
-                  <Button variant="primary" type="submit">Save</Button>
-                  <Button onClick={() => setIsEdit(false)}>Cancel</Button>
+                  <Button variant="primary" type="submit">ذخیره</Button>
+                  <Button onClick={() => setIsEdit(false)}>لغو</Button>
                 </div>
               </form>
             ) : (
@@ -89,15 +89,15 @@ function ImagePackProfile({
         }
       </div>
       <div className="image-pack-profile__usage">
-        <Text variant="b3">Pack usage</Text>
+        <Text variant="b3">استفاده بسته</Text>
         <Button
           onClick={onUsageChange ? handleUsageSelect : undefined}
           iconSrc={onUsageChange ? ChevronBottomIC : null}
         >
           <Text>
-            {usage === 'emoticon' && 'Emoji'}
-            {usage === 'sticker' && 'Sticker'}
-            {usage === 'both' && 'Both'}
+            {usage === 'شکلک' && 'ایموجی'}
+            {usage === 'استیکر' && 'استیکر'}
+            {usage === 'هر دو' && 'هر دو'}
           </Text>
         </Button>
       </div>
