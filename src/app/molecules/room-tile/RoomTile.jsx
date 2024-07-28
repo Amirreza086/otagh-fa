@@ -18,9 +18,9 @@ function RoomTile({ avatarSrc, name, id, inviterName, memberCount, desc, options
         <Text variant="b3">
           {inviterName !== null
             ? `Invited by ${inviterName} to ${id}${
-                memberCount === null ? '' : ` • ${memberCount} members`
+                memberCount === null ? '' : ` • ${memberCount} اعضا`
               }`
-            : id + (memberCount === null ? '' : ` • ${memberCount} members`)}
+            : id + (memberCount === null ? '' : ` • ${memberCount} اعضا`)}
         </Text>
         {desc !== null && typeof desc === 'string' ? (
           <Text className="room-tile__content__desc" variant="b2">
