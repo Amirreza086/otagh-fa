@@ -92,7 +92,7 @@ function RoomJoinButton({ roomId, via }: RoomJoinButtonProps) {
         onClick={join}
         disabled={!canJoin}
       >
-        <Text size="B300">Join</Text>
+        <Text size="B300">پیوستن</Text>
       </Chip>
     </Box>
   );
@@ -149,12 +149,12 @@ function RoomProfileError({ roomId, suggested, error, via }: RoomProfileErrorPro
       <Box grow="Yes" direction="Column" className={css.ErrorNameContainer}>
         <Box gap="200" alignItems="Center">
           <Text size="H5" truncate>
-            Unknown
+            نامشخص
           </Text>
           {suggested && (
             <Box shrink="No" alignItems="Center">
               <Badge variant="Success" fill="Soft" radii="Pill" outlined>
-                <Text size="L400">Suggested</Text>
+                <Text size="L400">پیشنهاد شده</Text>
               </Badge>
             </Box>
           )}
@@ -163,7 +163,7 @@ function RoomProfileError({ roomId, suggested, error, via }: RoomProfileErrorPro
           {privateRoom && (
             <>
               <Badge variant="Secondary" fill="Soft" radii="Pill" outlined>
-                <Text size="L400">Private Room</Text>
+                <Text size="L400">اتاق خصوصی</Text>
               </Badge>
               <Line
                 variant="SurfaceVariant"
@@ -223,7 +223,7 @@ function RoomProfile({
           {suggested && (
             <Box shrink="No" alignItems="Center">
               <Badge variant="Success" fill="Soft" radii="Pill" outlined>
-                <Text size="L400">Suggested</Text>
+                <Text size="L400">پیشنهاد شده</Text>
               </Badge>
             </Box>
           )}
@@ -231,7 +231,7 @@ function RoomProfile({
         <Box gap="200" alignItems="Center">
           {memberCount && (
             <Box shrink="No" gap="200">
-              <Text size="T200" priority="300">{`${millify(memberCount)} Members`}</Text>
+              <Text size="T200" priority="300">{`${millify(memberCount)} دنبال کننده`}</Text>
             </Box>
           )}
           {memberCount && topic && (
