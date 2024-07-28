@@ -56,11 +56,11 @@ function ResetPasswordComplete({ email }: { email?: string }) {
           <Dialog>
             <Box style={{ padding: config.space.S400 }} direction="Column" gap="400">
               <Text>
-                Password has been reset successfully. Please login with your new password.
+                رمز عبور با موفقیت بازنشانی شد. لطفا با رمز عبور جدید خود وارد شوید.
               </Text>
               <Button variant="Primary" onClick={handleClick}>
                 <Text size="B400" as="span">
-                  Login
+                  ورود
                 </Text>
               </Button>
             </Box>
@@ -167,11 +167,11 @@ export function PasswordResetForm({ defaultEmail }: PasswordResetFormProps) {
   return (
     <Box as="form" onSubmit={handleSubmit} direction="Inherit" gap="400">
       <Text size="T300" priority="400">
-        Homeserver <strong>{server}</strong> will send you an email to let you reset your password.
+        سرور مرکزی <strong>{server}</strong> یک ایمیل برای شما ارسال می کند تا رمز عبور خود را بازنشانی کنید.
       </Text>
       <Box direction="Column" gap="100">
         <Text as="label" size="L400" priority="300">
-          Email
+          ایمیل
         </Text>
         <Input
           defaultValue={defaultEmail}
@@ -193,7 +193,7 @@ export function PasswordResetForm({ defaultEmail }: PasswordResetFormProps) {
           <>
             <Box direction="Column" gap="100">
               <Text as="label" size="L400" priority="300">
-                New Password
+                رمز عبور جدید
               </Text>
               <PasswordInput
                 ref={passRef}
@@ -207,7 +207,7 @@ export function PasswordResetForm({ defaultEmail }: PasswordResetFormProps) {
             </Box>
             <Box direction="Column" gap="100">
               <Text as="label" size="L400" priority="300">
-                Confirm Password
+                تائید رمز عبور
               </Text>
               <PasswordInput
                 ref={confPassRef}
@@ -226,14 +226,14 @@ export function PasswordResetForm({ defaultEmail }: PasswordResetFormProps) {
       {resetPasswordError && (
         <FieldError
           message={`${resetPasswordError.errcode}: ${
-            resetPasswordError.data?.error ?? 'Failed to reset password.'
+            resetPasswordError.data?.error ?? 'بازنشانی رمز عبور ناموفق.'
           }`}
         />
       )}
       <span data-spacing-node />
       <Button type="submit" variant="Primary" size="500">
         <Text as="span" size="B500">
-          Reset Password
+          بازنشانی رمز عبور
         </Text>
       </Button>
 
