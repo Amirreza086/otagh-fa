@@ -41,10 +41,10 @@ function JoinAliasContent({ term, requestClose }) {
     const alias = e.target.alias.value;
     if (alias?.trim() === '') return;
     if (alias.match(ALIAS_OR_ID_REG) === null) {
-      setError('Invalid address.');
+      setError('آدرس نامعتبر است.');
       return;
     }
-    setProcess('Looking for address...');
+    setProcess('در حال یافتن آدرس...');
     setError(undefined);
     let via;
     if (alias.startsWith('#')) {
@@ -58,7 +58,7 @@ function JoinAliasContent({ term, requestClose }) {
         if (!mountStore.getItem()) return;
         setProcess(false);
         setError(
-          `Unable to find room/space with ${alias}. Either room/space is private or doesn't exist.`
+          `پیدا کردن اتاق/فضا با ${alias}. اتاق/فضا خصوصی است یا وجود ندارد.`
         );
       }
     }
@@ -69,7 +69,7 @@ function JoinAliasContent({ term, requestClose }) {
     } catch {
       if (!mountStore.getItem()) return;
       setProcess(false);
-      setError(`Unable to join ${alias}. Either room/space is private or doesn't exist.`);
+      setError(`امکان پیوستن وجود ندارد ${alias}. اتاق/فضا خصوصی است یا وجود ندارد.`);
     }
   };
 
@@ -89,7 +89,7 @@ function JoinAliasContent({ term, requestClose }) {
           </>
         ) : (
           <Button variant="primary" type="submit">
-            Join
+            پیوستن
           </Button>
         )}
       </div>
@@ -130,7 +130,7 @@ function JoinAlias() {
       isOpen={data !== null}
       title={
         <Text variant="s1" weight="medium" primary>
-          Join with address
+          پیوستن به این آدرس
         </Text>
       }
       contentOptions={<IconButton src={CrossIC} onClick={requestClose} tooltip="Close" />}
