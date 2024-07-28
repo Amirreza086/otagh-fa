@@ -29,7 +29,7 @@ export function SpaceSearch() {
         <Box grow="Yes" justifyContent="Center" alignItems="Center" gap="200">
           <Icon size="400" src={Icons.Search} />
           <Text size="H3" truncate>
-            Message Search
+            جست و جو پیام
           </Text>
         </Box>
       </PageHeader>
