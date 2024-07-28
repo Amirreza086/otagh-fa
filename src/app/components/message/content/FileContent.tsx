@@ -35,7 +35,7 @@ const renderErrorButton = (retry: () => void, text: string) => (
   <TooltipProvider
     tooltip={
       <Tooltip variant="Critical">
-        <Text>Failed to load file!</Text>
+        <Text>فایل بارگیری نشد!</Text>
       </Tooltip>
     }
     position="Top"
@@ -144,7 +144,7 @@ export function ReadTextFile({ body, mimeType, url, encInfo, renderViewer }: Rea
           }
         >
           <Text size="B400" truncate>
-            Open File
+            بازکردن فایل
           </Text>
         </Button>
       )}
@@ -223,7 +223,7 @@ export function ReadPdfFile({ body, mimeType, url, encInfo, renderViewer }: Read
           }
         >
           <Text size="B400" truncate>
-            Open PDF
+            بازکردن PDF
           </Text>
         </Button>
       )}
