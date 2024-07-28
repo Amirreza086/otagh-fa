@@ -56,19 +56,19 @@ function CreateKeyBackupDialog({ keyData }) {
       {done === false && (
         <div>
           <Spinner size="small" />
-          <Text>Creating backup...</Text>
+          <Text>در حال ساختن پشتیبان...</Text>
         </div>
       )}
       {done === true && (
         <>
           <Text variant="h1">✅</Text>
-          <Text>Successfully created backup</Text>
+          <Text>فایل پشتیبان با موفقیت ساخته شد.</Text>
         </>
       )}
       {done === null && (
         <>
-          <Text>Failed to create backup</Text>
-          <Button onClick={doBackup}>Retry</Button>
+          <Text>ساخت فایل پشتیبان ناموفق بود.</Text>
+          <Button onClick={doBackup}>تلاش دوباره</Button>
         </>
       )}
     </div>
@@ -104,14 +104,14 @@ function RestoreKeyBackupDialog({ keyData }) {
         progressCallback,
       });
       if (!mountStore.getItem()) return;
-      setStatus({ done: `Successfully restored backup keys (${info.imported}/${info.total}).` });
+      setStatus({ done: `کلیدهای پشتیبان با موفقیت بازیابی شدند (${info.imported}/${info.total}).` });
     } catch (e) {
       if (!mountStore.getItem()) return;
       if (e.errcode === 'RESTORE_BACKUP_ERROR_BAD_KEY') {
         deletePrivateKey(keyData.keyId);
-        setStatus({ error: 'Failed to restore backup. Key is invalid!', errorCode: 'BAD_KEY' });
+        setStatus({ error: 'بازیابی نسخه پشتیبان انجام نشد. کلید نامعتبر است!', errorCode: 'BAD_KEY' });
       } else {
-        setStatus({ error: 'Failed to restore backup.', errCode: 'UNKNOWN' });
+        setStatus({ error: 'بازیابی نسخه پشتیبان انجام نشد', errCode: 'UNKNOWN' });
       }
     }
   };
@@ -126,7 +126,7 @@ function RestoreKeyBackupDialog({ keyData }) {
       {(status === false || status.message) && (
         <div>
           <Spinner size="small" />
-          <Text>{status.message ?? 'Restoring backup keys...'}</Text>
+          <Text>{status.message ?? 'بازنشانی کلید پشتیبانی...'}</Text>
         </div>
       )}
       {status.done && (
@@ -138,7 +138,7 @@ function RestoreKeyBackupDialog({ keyData }) {
       {status.error && (
         <>
           <Text>{status.error}</Text>
-          <Button onClick={restoreBackup}>Retry</Button>
+          <Button onClick={restoreBackup}>تلاش دوباره</Button>
         </>
       )}
     </div>
@@ -170,13 +170,13 @@ function DeleteKeyBackupDialog({ requestClose }) {
   return (
     <div className="key-backup__delete">
       <Text variant="h1">🗑</Text>
-      <Text weight="medium">Deleting key backup is permanent.</Text>
-      <Text>All encrypted messages keys stored on server will be deleted.</Text>
+      <Text weight="medium">حذف بکاپ کلید دائمی است</Text>
+      <Text>تمام کلیدهای پیام های رمزگذاری شده ذخیره شده در سرور حذف خواهند شد</Text>
       {isDeleting ? (
         <Spinner size="small" />
       ) : (
         <Button variant="danger" onClick={deleteBackup}>
-          Delete
+          حذف کردن
         </Button>
       )}
     </div>
@@ -220,7 +220,7 @@ function KeyBackup() {
 
     openReusableDialog(
       <Text variant="s1" weight="medium">
-        Create Key Backup
+        ساختن کلید پشتیبان
       </Text>,
       () => <CreateKeyBackupDialog keyData={keyData} />,
       () => fetchKeyBackupVersion()
@@ -233,7 +233,7 @@ function KeyBackup() {
 
     openReusableDialog(
       <Text variant="s1" weight="medium">
-        Restore Key Backup
+        بازنشانی کلید پشتیبان
       </Text>,
       () => <RestoreKeyBackupDialog keyData={keyData} />
     );
@@ -242,7 +242,7 @@ function KeyBackup() {
   const openDeleteKeyBackup = () =>
     openReusableDialog(
       <Text variant="s1" weight="medium">
-        Delete Key Backup
+        پاک کردن کلید پشتیبان
       </Text>,
       (requestClose) => (
         <DeleteKeyBackupDialog
@@ -259,7 +259,7 @@ function KeyBackup() {
     if (keyBackup === null)
       return (
         <Button variant="primary" onClick={openCreateKeyBackup}>
-          Create Backup
+          ساختن فایل پشتیبان
         </Button>
       );
     return (
@@ -277,12 +277,11 @@ function KeyBackup() {
 
   return (
     <SettingTile
-      title="Encrypted messages backup"
+      title="رمزنگاری پیام های پشتیبان گیری شده"
       content={
         <>
           <Text variant="b3">
-            Online backup your encrypted messages keys with your account data in case you lose
-            access to your sessions. Your keys will be secured with a unique Security Key.
+            در صورت از دست دادن دسترسی به جلسات خود، از کلیدهای پیام های رمزگذاری شده خود با داده های حساب خود نسخه پشتیبان آنلاین تهیه کنید. کلیدهای شما با یک کلید امنیتی منحصر به فرد ایمن می شوند
           </Text>
           {!isCSEnabled && (
             <InfoCard
@@ -290,7 +289,7 @@ function KeyBackup() {
               rounded
               variant="caution"
               iconSrc={InfoIC}
-              title="Setup cross signing to backup your encrypted messages."
+              title="برای پشتیبان گیری از پیام های رمزگذاری شده خود، امضای متقاطع را تنظیم کنید."
             />
           )}
         </>
