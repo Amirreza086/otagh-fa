@@ -150,7 +150,7 @@ const SpaceMenu = forwardRef<HTMLDivElement, SpaceMenuProps>(
             disabled={!unread}
           >
             <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-              Mark as Read
+              علامت زدن به عنوان خوانده شده
             </Text>
           </MenuItem>
           {onUnpin && (
@@ -161,7 +161,7 @@ const SpaceMenu = forwardRef<HTMLDivElement, SpaceMenuProps>(
               after={<Icon size="100" src={Icons.Pin} />}
             >
               <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-                Unpin
+                پین نشدن
               </Text>
             </MenuItem>
           )}
@@ -178,7 +178,7 @@ const SpaceMenu = forwardRef<HTMLDivElement, SpaceMenuProps>(
             disabled={!canInvite}
           >
             <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-              Invite
+              دعوت
             </Text>
           </MenuItem>
           <MenuItem
@@ -188,7 +188,7 @@ const SpaceMenu = forwardRef<HTMLDivElement, SpaceMenuProps>(
             radii="300"
           >
             <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-              Copy Link
+              کپی لینک
             </Text>
           </MenuItem>
           <MenuItem
@@ -198,7 +198,7 @@ const SpaceMenu = forwardRef<HTMLDivElement, SpaceMenuProps>(
             radii="300"
           >
             <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-              Space Settings
+              تنظیمات فضا
             </Text>
           </MenuItem>
         </Box>
