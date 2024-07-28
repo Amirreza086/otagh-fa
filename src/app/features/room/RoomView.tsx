@@ -122,7 +122,7 @@ export function RoomView({ room, eventId }: { room: Room; eventId?: string }) {
                   alignItems="Center"
                   justifyContent="Center"
                 >
-                  <Text align="Center">You do not have permission to post in this room</Text>
+                  <Text align="Center">شما اجازه ندارید در این اتاق پست کنید</Text>
                 </RoomInputPlaceholder>
               )}
             </>
