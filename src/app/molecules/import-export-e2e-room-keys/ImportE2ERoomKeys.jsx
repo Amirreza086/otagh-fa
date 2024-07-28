@@ -33,7 +33,7 @@ function ImportE2ERoomKeys() {
       if (isMountStore.getItem()) {
         setStatus({
           isOngoing: true,
-          msg: 'Decrypting file...',
+          msg: 'در حال رمزگشایی فایل...',
           type: cons.status.IN_FLIGHT,
         });
       }
@@ -42,7 +42,7 @@ function ImportE2ERoomKeys() {
       if (isMountStore.getItem()) {
         setStatus({
           isOngoing: true,
-          msg: 'Decrypting messages...',
+          msg: 'در حال رمزگشایی پیام...',
           type: cons.status.IN_FLIGHT,
         });
       }
@@ -50,7 +50,7 @@ function ImportE2ERoomKeys() {
       if (isMountStore.getItem()) {
         setStatus({
           isOngoing: false,
-          msg: 'Successfully imported all keys.',
+          msg: 'همه کلیدها با موفقیت صادر شدند.',
           type: cons.status.SUCCESS,
         });
         inputRef.current.value = null;
@@ -60,7 +60,7 @@ function ImportE2ERoomKeys() {
       if (isMountStore.getItem()) {
         setStatus({
           isOngoing: false,
-          msg: e.friendlyText || 'Failed to decrypt keys. Please try again.',
+          msg: e.friendlyText || 'رمزگشایی کلیدها انجام نشد. لطفا دوباره تلاش کنید.',
           type: cons.status.ERROR,
         });
       }
@@ -115,9 +115,9 @@ function ImportE2ERoomKeys() {
             <Text>{keyFile.name}</Text>
           </div>
         )}
-        {keyFile === null && <Button onClick={() => inputRef.current.click()}>Import keys</Button>}
-        <Input forwardRef={passwordRef} type="password" placeholder="Password" required />
-        <Button disabled={status.isOngoing} variant="primary" type="submit">Decrypt</Button>
+        {keyFile === null && <Button onClick={() => inputRef.current.click()}>وارد کردن کلیدها</Button>}
+        <Input forwardRef={passwordRef} type="password" placeholder="رمز عبور" required />
+        <Button disabled={status.isOngoing} variant="primary" type="submit">رمزگشایی</Button>
       </form>
       { status.type === cons.status.IN_FLIGHT && (
         <div className="import-e2e-room-keys__process">
