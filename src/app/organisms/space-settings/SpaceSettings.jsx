@@ -78,7 +78,7 @@ function GeneralSettings({ roomId }) {
           }}
           iconSrc={LeaveArrowIC}
         >
-          Leave
+          ترک کردن
         </MenuItem>
       </div>
       <div className="space-settings__card">
