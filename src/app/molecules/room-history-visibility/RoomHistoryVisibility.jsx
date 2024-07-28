@@ -17,19 +17,19 @@ const visibility = {
 
 const items = [{
   iconSrc: null,
-  text: 'Anyone (including guests)',
+  text: 'هر کسی (از جمله مهمانان)',
   type: visibility.WORLD_READABLE,
 }, {
   iconSrc: null,
-  text: 'Members (all messages)',
+  text: 'اعضا (همه پیام ها)',
   type: visibility.SHARED,
 }, {
   iconSrc: null,
-  text: 'Members (messages after invite)',
+  text: 'اعضا (پیام بعد از دعوت)',
   type: visibility.INVITED,
 }, {
   iconSrc: null,
-  text: 'Members (messages after join)',
+  text: 'اعضا (پیام پس از عضویت)',
   type: visibility.JOINED,
 }];
 
@@ -84,7 +84,7 @@ function RoomHistoryVisibility({ roomId }) {
           </MenuItem>
         ))
       }
-      <Text variant="b3">Changes to history visibility will only apply to future messages. The visibility of existing history will have no effect.</Text>
+      <Text variant="b3">تغییرات در نمایان بودن سابقه فقط برای پیام‌های بعدی اعمال می‌شود. قابل مشاهده بودن تاریخ موجود هیچ تأثیری نخواهد داشت.</Text>
     </div>
   );
 }
