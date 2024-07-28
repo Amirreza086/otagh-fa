@@ -74,9 +74,9 @@ export function CommandAutocomplete({
     <AutocompleteMenu
       headerContent={
         <Box grow="Yes" direction="Row" gap="200" justifyContent="SpaceBetween">
-          <Text size="L400">Commands</Text>
+          <Text size="L400">دستورات</Text>
           <Text size="T200" priority="300" truncate>
-            Begin your message with command
+            پیام خود را با دستور شروع کنید
           </Text>
         </Box>
       }
