@@ -32,15 +32,15 @@ function IgnoreUserList() {
 
   return (
     <div className="ignore-user-list">
-      <MenuHeader>Ignored users</MenuHeader>
+      <MenuHeader>کاربران نادیده گرفته شده</MenuHeader>
       <SettingTile
-        title="Ignore user"
+        title="نادیده گرفتن کاربر"
         content={(
           <div className="ignore-user-list__users">
-            <Text variant="b3">Ignore userId if you do not want to receive their messages or invites.</Text>
+            <Text variant="b3">اگر نمی‌خواهید پیام‌ها یا دعوت‌های او را دریافت کنید، شناسه کاربر را نادیده بگیرید.</Text>
             <form onSubmit={handleSubmit}>
               <Input name="ignoreInput" required />
-              <Button variant="primary" type="submit">Ignore</Button>
+              <Button variant="primary" type="submit">چشم پوشی</Button>
             </form>
             {ignoredUsers.length > 0 && (
               <div>
