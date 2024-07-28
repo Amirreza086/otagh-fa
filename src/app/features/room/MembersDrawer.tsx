@@ -252,8 +252,8 @@ export function MembersDrawer({ room, members }: MembersDrawerProps) {
       <Header className={css.MembersDrawerHeader} variant="Background" size="600">
         <Box grow="Yes" alignItems="Center" gap="200">
           <Box grow="Yes" alignItems="Center" gap="200">
-            <Text title={`${room.getJoinedMemberCount()} Members`} size="H5" truncate>
-              {`${millify(room.getJoinedMemberCount())} Members`}
+            <Text title={`${room.getJoinedMemberCount()} دنبال کننده`} size="H5" truncate>
+              {`${millify(room.getJoinedMemberCount())} دنبال کننده`}
             </Text>
           </Box>
           <Box shrink="No" alignItems="Center">
@@ -263,7 +263,7 @@ export function MembersDrawer({ room, members }: MembersDrawerProps) {
               offset={4}
               tooltip={
                 <Tooltip>
-                  <Text>Close</Text>
+                  <Text>بستن</Text>
                 </Tooltip>
               }
             >
@@ -427,7 +427,7 @@ export function MembersDrawer({ room, members }: MembersDrawerProps) {
                         after={<Icon size="50" src={Icons.Cross} />}
                       >
                         <Text size="B300">{`${result.items.length || 'No'} ${
-                          result.items.length === 1 ? 'Result' : 'Results'
+                          result.items.length === 1 ? 'نتیجه' : 'نتایج'
                         }`}</Text>
                       </Chip>
                     )
@@ -451,7 +451,7 @@ export function MembersDrawer({ room, members }: MembersDrawerProps) {
 
             {!fetchingMembers && !result && processMembers.length === 0 && (
               <Text style={{ padding: config.space.S300 }} align="Center">
-                {`No "${membershipFilter.name}" Members`}
+                {`نه "${membershipFilter.name}" دنبال کننده`}
               </Text>
             )}
 
