@@ -15,11 +15,12 @@ export function WelcomePage() {
         <PageHeroSection>
           <PageHero
             icon={<img width="70" height="70" src={CinnySVG} alt="Cinny Logo" />}
-            title="Welcome to Otagh"
+            title="به پیام رسان اتاق خوش آمدید"
             subTitle={
               <span>
-                Yet another messenger client application,
-                By Amirreza Eskandarzadeh.
+                پیام رسانی غیرمتمرکز ، امن و بر پایه بستر بلاکچین
+                <br></br>
+                برنامه نویسی توسط امیررضا اسکندرزاده.
               </span>
             }
           >
