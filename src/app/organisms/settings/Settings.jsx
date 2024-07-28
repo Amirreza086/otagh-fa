@@ -94,9 +94,9 @@ function AppearanceSection() {
   return (
     <div className="settings-appearance">
       <div className="settings-appearance__card">
-        <MenuHeader>Theme</MenuHeader>
+        <MenuHeader>ظاهری</MenuHeader>
         <SettingTile
-          title="Follow system theme"
+          title="تنظیم ظاهری مطابق سیستم عامل"
           options={
             <Toggle
               isActive={settings.useSystemTheme}
@@ -106,7 +106,7 @@ function AppearanceSection() {
               }}
             />
           }
-          content={<Text variant="b3">Use light or dark mode based on the system settings.</Text>}
+          content={<Text variant="b3">بر اساس تنظیمات سیستم از حالت روشن یا تاریک استفاده کنید</Text>}
         />
         <SettingTile
           title="Theme"
@@ -128,14 +128,14 @@ function AppearanceSection() {
           }
         />
         <SettingTile
-          title="Use Twitter Emoji"
+          title="استفاده از ایموجی های توئیتر"
           options={
             <Toggle isActive={twitterEmoji} onToggle={() => setTwitterEmoji(!twitterEmoji)} />
           }
-          content={<Text variant="b3">Use Twitter emoji instead of system emoji.</Text>}
+          content={<Text variant="b3">از ایموجی توییتر به جای ایموجی سیستم استفاده کنید</Text>}
         />
         <SettingTile
-          title="Page Zoom"
+          title="اندازه صفحه"
           options={
             <Input
               style={{ width: toRem(150) }}
@@ -153,15 +153,15 @@ function AppearanceSection() {
           }
           content={
             <Text variant="b3">
-              Change page zoom to scale user interface between 75% to 150%. Default: 100%
+              بزرگنمایی صفحه را به مقیاس رابط کاربری بین 75٪ تا 150٪ تغییر دهید. پیش فرض: 100%
             </Text>
           }
         />
       </div>
       <div className="settings-appearance__card">
-        <MenuHeader>Room messages</MenuHeader>
+        <MenuHeader>پیام های اتاق</MenuHeader>
         <SettingTile
-          title="Message Layout"
+          title="لایه پیام"
           content={
             <SegmentedControls
               selected={messageLayout}
@@ -171,7 +171,7 @@ function AppearanceSection() {
           }
         />
         <SettingTile
-          title="Message Spacing"
+          title="فاصله پیام ها"
           content={
             <SegmentedControls
               selected={spacings.findIndex((s) => s === messageSpacing)}
@@ -190,7 +190,7 @@ function AppearanceSection() {
           }
         />
         <SettingTile
-          title="Use ENTER for Newline"
+          title="از ENTER برای Newline استفاده کنید"
           options={
             <Toggle
               isActive={enterForNewline}
@@ -200,16 +200,16 @@ function AppearanceSection() {
           content={
             <Text variant="b3">{`Use ${
               isMacOS() ? KeySymbol.Command : 'Ctrl'
-            } + ENTER to send message and ENTER for newline.`}</Text>
+            } + ENTER برای ارسال پیام و ENTER برای خط جدید`}</Text>
           }
         />
         <SettingTile
-          title="Markdown formatting"
+          title="قالب بندی Markdown"
           options={<Toggle isActive={isMarkdown} onToggle={() => setIsMarkdown(!isMarkdown)} />}
-          content={<Text variant="b3">Format messages with markdown syntax before sending.</Text>}
+          content={<Text variant="b3">قبل از ارسال، پیام ها را با نحو علامت گذاری قالب بندی کنید</Text>}
         />
         <SettingTile
-          title="Hide membership events"
+          title="پنهان کردن رویدادهای عضویت"
           options={
             <Toggle
               isActive={hideMembershipEvents}
@@ -218,13 +218,12 @@ function AppearanceSection() {
           }
           content={
             <Text variant="b3">
-              Hide membership change messages from room timeline. (Join, Leave, Invite, Kick and
-              Ban)
+              پیام‌های تغییر عضویت را از جدول زمانی اتاق مخفی کنید. (پیوستن، ترک، دعوت، لگد زدن و ممنوعیت)
             </Text>
           }
         />
         <SettingTile
-          title="Hide nick/avatar events"
+          title="مخفی کردن نام/آواتار رویداد"
           options={
             <Toggle
               isActive={hideNickAvatarEvents}
@@ -232,39 +231,39 @@ function AppearanceSection() {
             />
           }
           content={
-            <Text variant="b3">Hide nick and avatar change messages from room timeline.</Text>
+            <Text variant="b3">پیام‌های تغییر نام و آواتار را از جدول زمانی اتاق مخفی کنید</Text>
           }
         />
         <SettingTile
-          title="Disable media auto load"
+          title="خاموش کردن دانلود خودکار رسانه ها"
           options={
             <Toggle isActive={!mediaAutoLoad} onToggle={() => setMediaAutoLoad(!mediaAutoLoad)} />
           }
           content={
-            <Text variant="b3">Prevent images and videos from auto loading to save bandwidth.</Text>
+            <Text variant="b3">برای صرفه جویی در پهنای باند، از بارگذاری خودکار تصاویر و ویدیوها جلوگیری کنید</Text>
           }
         />
         <SettingTile
-          title="Url Preview"
+          title="Url پیش نمایش"
           options={<Toggle isActive={urlPreview} onToggle={() => setUrlPreview(!urlPreview)} />}
-          content={<Text variant="b3">Show url preview for link in messages.</Text>}
+          content={<Text variant="b3">نمایش پیش نمایش url برای پیوند در پیام ها.</Text>}
         />
         <SettingTile
-          title="Url Preview in Encrypted Room"
+          title="Url پیش نمایش در اتاق های رمزنگاری شده"
           options={
             <Toggle isActive={encUrlPreview} onToggle={() => setEncUrlPreview(!encUrlPreview)} />
           }
-          content={<Text variant="b3">Show url preview for link in encrypted messages.</Text>}
+          content={<Text variant="b3">نمایش پیش نمایش url برای پیوند در پیام های رمزگذاری شده.</Text>}
         />
         <SettingTile
-          title="Show hidden events"
+          title="نمایش رویدادهای پنهان"
           options={
             <Toggle
               isActive={showHiddenEvents}
               onToggle={() => setShowHiddenEvents(!showHiddenEvents)}
             />
           }
-          content={<Text variant="b3">Show hidden state and message events.</Text>}
+          content={<Text variant="b3">نمایش رویدادهای وضعیت پنهان و پیام</Text>}
         />
       </div>
     </div>
@@ -315,7 +314,7 @@ function NotificationsSection() {
           })
         }
       >
-        Request permission
+        درخواست مجوز
       </Button>
     );
   };
@@ -323,21 +322,21 @@ function NotificationsSection() {
   return (
     <>
       <div className="settings-notifications">
-        <MenuHeader>Notification & Sound</MenuHeader>
+        <MenuHeader>اعلانات و صداها</MenuHeader>
         <SettingTile
-          title="Desktop notification"
+          title="اعلان دسکتاپ"
           options={renderOptions()}
-          content={<Text variant="b3">Show desktop notification when new messages arrive.</Text>}
+          content={<Text variant="b3">نمایش اعلان دسکتاپ هنگام رسیدن پیام های جدید.</Text>}
         />
         <SettingTile
-          title="Notification Sound"
+          title="صدای اعلانات"
           options={
             <Toggle
               isActive={isNotificationSounds}
               onToggle={() => setIsNotificationSounds(!isNotificationSounds)}
             />
           }
-          content={<Text variant="b3">Play sound when new messages arrive.</Text>}
+          content={<Text variant="b3">با رسیدن پیام‌های جدید، صدا را پخش کنید</Text>}
         />
       </div>
       <GlobalNotification />
@@ -364,33 +363,31 @@ function SecuritySection() {
   return (
     <div className="settings-security">
       <div className="settings-security__card">
-        <MenuHeader>Cross signing and backup</MenuHeader>
+        <MenuHeader>امضای متقاطع و پشتیبان گیری</MenuHeader>
         <CrossSigning />
         <KeyBackup />
       </div>
       <DeviceManage />
       <div className="settings-security__card">
-        <MenuHeader>Export/Import encryption keys</MenuHeader>
+        <MenuHeader>صادر / وارد کردن کلیدهای رمزگذاری</MenuHeader>
         <SettingTile
-          title="Export E2E room keys"
+          title="خروجی کلیدهای اتاق های E2E"
           content={
             <>
               <Text variant="b3">
-                Export end-to-end encryption room keys to decrypt old messages in other session. In
-                order to encrypt keys you need to set a password, which will be used while
-                importing.
+                کلیدهای اتاق رمزگذاری سرتاسر را برای رمزگشایی پیام های قدیمی در جلسه دیگر صادر کنید. برای رمزگذاری کلیدها باید یک رمز عبور تعیین کنید که در هنگام وارد کردن استفاده می شود
               </Text>
               <ExportE2ERoomKeys />
             </>
           }
         />
         <SettingTile
-          title="Import E2E room keys"
+          title="واردکردن کلیدهای اتاق های E2E"
           content={
             <>
               <Text variant="b3">
                 {
-                  "To decrypt older messages, Export E2EE room keys from Element (Settings > Security & Privacy > Encryption > Cryptography) and import them here. Imported keys are encrypted so you'll have to enter the password you set in order to decrypt it."
+                  "برای رمزگشایی پیام‌های قدیمی‌تر، کلیدهای اتاق E2EE را از عنصر (تنظیمات &gt; امنیت و حریم خصوصی &gt; رمزگذاری &gt; رمزنگاری) صادر کنید و آنها را در اینجا وارد کنید. کلیدهای وارد شده رمزگذاری شده اند، بنابراین برای رمزگشایی باید رمز عبوری را که تعیین کرده اید وارد کنید."
                 }
               </Text>
               <ImportE2ERoomKeys />
@@ -408,30 +405,31 @@ function AboutSection() {
   return (
     <div className="settings-about">
       <div className="settings-about__card">
-        <MenuHeader>Application</MenuHeader>
+        <MenuHeader>اپلیکیشن</MenuHeader>
         <div className="settings-about__branding">
-          <img width="60" height="60" src={CinnySVG} alt="Cinny logo" />
+          <img width="60" height="60" src={CinnySVG} alt="Otagh logo" />
           <div>
             <Text variant="h2" weight="medium">
-              Otagh
+              پیام رسان  غیرمتمرکز اتاق
               <span
                 className="text text-b3"
                 style={{ margin: '0 var(--sp-extra-tight)' }}
               >{`v${cons.version}`}</span>
             </Text>
-            <Text>Yet another messenger decentralized client application</Text>
-            <Text>created by Amirreza Eskandarzadeh</Text>
+            <Text>پیام رسانی امن، غیرمتمرکز و سریع بر پایه بلاکچین جهت یک تجربه خوب پیام رسانی امن و سریع.</Text>
+            <br></br>
+            <Text>ساخته شده توسط امیررضا اسکندرزاده</Text>
 
             <div className="settings-about__btns">
               <Button onClick={() => clearCacheAndReload(mx)} variant="danger">
-                Clear cache & reload
+                حذف حافظه پنهان و بارگزاری مجدد
               </Button>
             </div>
           </div>
         </div>
       </div>
       <div className="settings-about__card">
-        <MenuHeader>Credits</MenuHeader>
+        <MenuHeader>منابع</MenuHeader>
         <div className="settings-about__credits">
           <ul>
             <li>
@@ -610,9 +608,9 @@ function Settings() {
   const handleLogout = async () => {
     if (
       await confirmDialog(
-        'Logout',
-        'Are you sure that you want to logout your session?',
-        'Logout',
+        'خارج شدن',
+        'آیا مطمئن هستید که می خواهید از جلسه خود خارج شوید؟',
+        'خارج شدن',
         'danger'
       )
     ) {
@@ -626,13 +624,13 @@ function Settings() {
       className="settings-window"
       title={
         <Text variant="s1" weight="medium" primary>
-          Settings
+          تنظیمات
         </Text>
       }
       contentOptions={
         <>
           <Button variant="danger" iconSrc={PowerIC} onClick={handleLogout}>
-            Logout
+            خارج شدن
           </Button>
           <IconButton src={CrossIC} onClick={requestClose} tooltip="Close" />
         </>
