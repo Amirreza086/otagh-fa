@@ -41,10 +41,10 @@ function AuthRequest({ onComplete, makeRequest }) {
       lastUsedPassword = undefined;
       if (!mountStore.getItem()) return;
       if (err.errcode === 'M_FORBIDDEN') {
-        setStatus({ error: 'Wrong password. Please enter correct password.' });
+        setStatus({ error: 'رمز عبور اشتباه است. لطفا رمز عبور صحیح را وارد کنید' });
         return;
       }
-      setStatus({ error: 'Request failed!' });
+      setStatus({ error: 'درخواست ناموفق!' });
     }
   };
 
@@ -64,7 +64,7 @@ function AuthRequest({ onComplete, makeRequest }) {
         />
         {status.ongoing && <Spinner size="small" />}
         {status.error && <Text variant="b3">{status.error}</Text>}
-        {(status === false || status.error) && <Button variant="primary" type="submit" disabled={!!status.error}>Continue</Button>}
+        {(status === false || status.error) && <Button variant="primary" type="submit" disabled={!!status.error}>ادامه</Button>}
       </form>
     </div>
   );
