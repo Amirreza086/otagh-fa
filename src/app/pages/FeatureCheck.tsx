@@ -17,10 +17,9 @@ export function FeatureCheck({ children }: { children: ReactNode }) {
         <Box grow="Yes" alignItems="Center" justifyContent="Center">
           <Dialog>
             <Box style={{ padding: config.space.S400 }} direction="Column" gap="400">
-              <Text>Missing Browser Feature</Text>
+              <Text>ویژگی مرورگر خاموش شده</Text>
               <Text size="T300" priority="400">
-                No IndexedDB support found. This application requires IndexedDB to store session
-                data locally. Please make sure your browser support IndexedDB and have it enabled.
+                هیچ پشتیبانی IndexedDB پیدا نشد. این برنامه به IndexedDB برای ذخیره داده های جلسه به صورت محلی نیاز دارد. لطفاً مطمئن شوید که مرورگر شما از IndexedDB پشتیبانی می کند و آن را فعال کنید
               </Text>
               <Text size="T200">
                 <a
@@ -28,7 +27,7 @@ export function FeatureCheck({ children }: { children: ReactNode }) {
                   rel="noreferrer noopener"
                   target="_blank"
                 >
-                  What is IndexedDB?
+                  چیست IndexedDB?
                 </a>
               </Text>
             </Box>
