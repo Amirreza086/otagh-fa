@@ -131,7 +131,7 @@ function RoomMembers({ roomId }) {
         autoFocus
       />
       <div className="room-members__header">
-        <MenuHeader>{`${searchMembers ? `Found — ${mList.length}` : members.length} members`}</MenuHeader>
+        <MenuHeader>{`${searchMembers ? `پیدا شد — ${mList.length}` : members.length} دنبال کننده`}</MenuHeader>
         <SegmentedControls
           selected={
             (() => {
@@ -139,7 +139,7 @@ function RoomMembers({ roomId }) {
               return getSegmentIndex[membership];
             })()
           }
-          segments={[{ text: 'Joined' }, { text: 'Invited' }, { text: 'Banned' }]}
+          segments={[{ text: 'پیوست' }, { text: 'دعوت شد' }, { text: 'ممنوع شد' }]}
           onSelect={(index) => {
             const memberships = ['join', 'invite', 'ban'];
             setMembership(memberships[index]);
@@ -162,7 +162,7 @@ function RoomMembers({ roomId }) {
           && (
             <div className="room-members__status">
               <Text variant="b2">
-                {searchMembers ? `No results found for "${searchMembers.term}"` : 'No members to display'}
+                {searchMembers ? `هیچ نتیجه ای برای "${searchMembers.term}"` : 'هیچ عضوی برای نمایش وجود ندارد'}
               </Text>
             </div>
           )
@@ -171,7 +171,7 @@ function RoomMembers({ roomId }) {
           mList.length !== 0
           && members.length > itemCount
           && searchMembers === null
-          && <Button onClick={loadMorePeople}>View more</Button>
+          && <Button onClick={loadMorePeople}>مشاهده بیشتر</Button>
         }
       </div>
     </div>
