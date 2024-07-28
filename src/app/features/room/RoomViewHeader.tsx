@@ -104,7 +104,7 @@ const RoomMenu = forwardRef<HTMLDivElement, RoomMenuProps>(
             disabled={!unread}
           >
             <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-              Mark as Read
+              علامت زدن به عنوان خوانده شده
             </Text>
           </MenuItem>
         </Box>
@@ -120,7 +120,7 @@ const RoomMenu = forwardRef<HTMLDivElement, RoomMenuProps>(
             disabled={!canInvite}
           >
             <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-              Invite
+              دعوت
             </Text>
           </MenuItem>
           <MenuItem
@@ -130,7 +130,7 @@ const RoomMenu = forwardRef<HTMLDivElement, RoomMenuProps>(
             radii="300"
           >
             <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-              Copy Link
+              کپی لینک
             </Text>
           </MenuItem>
           <MenuItem
@@ -140,7 +140,7 @@ const RoomMenu = forwardRef<HTMLDivElement, RoomMenuProps>(
             radii="300"
           >
             <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-              Room Settings
+              تنظیمات اتاق
             </Text>
           </MenuItem>
         </Box>
@@ -159,7 +159,7 @@ const RoomMenu = forwardRef<HTMLDivElement, RoomMenuProps>(
                   aria-pressed={promptLeave}
                 >
                   <Text style={{ flexGrow: 1 }} as="span" size="T300" truncate>
-                    Leave Room
+                    ترک کردن اتاق
                   </Text>
                 </MenuItem>
                 {promptLeave && (
@@ -276,7 +276,7 @@ export function RoomViewHeader() {
               offset={4}
               tooltip={
                 <Tooltip>
-                  <Text>Search</Text>
+                  <Text>جست و جو</Text>
                 </Tooltip>
               }
             >
@@ -293,7 +293,7 @@ export function RoomViewHeader() {
               offset={4}
               tooltip={
                 <Tooltip>
-                  <Text>Members</Text>
+                  <Text>دنبال کننده ها</Text>
                 </Tooltip>
               }
             >
@@ -310,7 +310,7 @@ export function RoomViewHeader() {
             offset={4}
             tooltip={
               <Tooltip>
-                <Text>More Options</Text>
+                <Text>ویژگی های بیشتر</Text>
               </Tooltip>
             }
           >
