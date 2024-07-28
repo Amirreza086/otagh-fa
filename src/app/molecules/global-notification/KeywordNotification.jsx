@@ -168,53 +168,53 @@ function GlobalNotification() {
 
   return (
     <div className="keyword-notification">
-      <MenuHeader>Mentions & keywords</MenuHeader>
+      <MenuHeader>اذکار و کلمات کلیدی</MenuHeader>
       <SettingTile
-        title="Message containing my display name"
+        title="پیام حاوی نام نمایشی من"
         options={(
           <Button onClick={(evt) => onSelect(evt, DISPLAY_NAME)} iconSrc={ChevronBottomIC}>
             { typeToLabel[rulesToType[DISPLAY_NAME]] }
           </Button>
         )}
-        content={<Text variant="b3">Default notification settings for all message containing your display name.</Text>}
+        content={<Text variant="b3">تنظیمات اعلان پیش‌فرض برای همه پیام‌های حاوی نام نمایشی شما.</Text>}
       />
       <SettingTile
-        title="Message containing my username"
+        title="پیام حاوی نام کاربری من"
         options={(
           <Button onClick={(evt) => onSelect(evt, USERNAME)} iconSrc={ChevronBottomIC}>
             { typeToLabel[rulesToType[USERNAME]] }
           </Button>
         )}
-        content={<Text variant="b3">Default notification settings for all message containing your username.</Text>}
+        content={<Text variant="b3">تنظیمات پیش‌فرض اعلان برای همه پیام‌های حاوی نام کاربری شما.</Text>}
       />
       <SettingTile
-        title="Message containing @room"
+        title="پیام حاوی @room"
         options={(
           <Button onClick={(evt) => onSelect(evt, ROOM_PING)} iconSrc={ChevronBottomIC}>
             {typeToLabel[rulesToType[ROOM_PING]]}
           </Button>
         )}
-        content={<Text variant="b3">Default notification settings for all messages containing @room.</Text>}
+        content={<Text variant="b3">تنظیمات پیش‌فرض اعلان برای همه پیام‌های حاوی @room.</Text>}
       />
       { rulesToType[KEYWORD] && (
         <SettingTile
-          title="Message containing keywords"
+          title="پیام حاوی کلمات کلیدی"
           options={(
             <Button onClick={(evt) => onSelect(evt, KEYWORD)} iconSrc={ChevronBottomIC}>
               {typeToLabel[rulesToType[KEYWORD]]}
             </Button>
           )}
-          content={<Text variant="b3">Default notification settings for all message containing keywords.</Text>}
+          content={<Text variant="b3">تنظیمات پیش‌فرض اعلان برای همه پیام‌های حاوی کلمات کلیدی.</Text>}
         />
       )}
       <SettingTile
-        title="Keywords"
+        title="کلمات کلیدی"
         content={(
           <div className="keyword-notification__keyword">
-            <Text variant="b3">Get notification when a message contains keyword.</Text>
+            <Text variant="b3">هنگامی که یک پیام حاوی کلمه کلیدی است، اعلان دریافت کنید.</Text>
             <form onSubmit={handleSubmit}>
               <Input name="keywordInput" required />
-              <Button variant="primary" type="submit">Add</Button>
+              <Button variant="primary" type="submit">اضافه کردن</Button>
             </form>
             {keywordRules.length > 0 && (
               <div>
