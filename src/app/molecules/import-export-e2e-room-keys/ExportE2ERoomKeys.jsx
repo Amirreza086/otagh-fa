@@ -30,14 +30,14 @@ function ExportE2ERoomKeys() {
     if (password !== confirmPasswordRef.current.value) {
       setStatus({
         isOngoing: false,
-        msg: 'Password does not match.',
+        msg: 'رمز عبور مطابقت ندارد.',
         type: cons.status.ERROR,
       });
       return;
     }
     setStatus({
       isOngoing: true,
-      msg: 'Getting keys...',
+      msg: 'در حال دریافت کلیدها...',
       type: cons.status.IN_FLIGHT,
     });
     try {
@@ -45,7 +45,7 @@ function ExportE2ERoomKeys() {
       if (isMountStore.getItem()) {
         setStatus({
           isOngoing: true,
-          msg: 'Encrypting keys...',
+          msg: 'رمزگشایی کلیدها...',
           type: cons.status.IN_FLIGHT,
         });
       }
@@ -57,7 +57,7 @@ function ExportE2ERoomKeys() {
       if (isMountStore.getItem()) {
         setStatus({
           isOngoing: false,
-          msg: 'Successfully exported all keys.',
+          msg: 'همه کلیدها با موفقیت صادر شد.',
           type: cons.status.SUCCESS,
         });
       }
@@ -65,7 +65,7 @@ function ExportE2ERoomKeys() {
       if (isMountStore.getItem()) {
         setStatus({
           isOngoing: false,
-          msg: e.friendlyText || 'Failed to export keys. Please try again.',
+          msg: e.friendlyText || 'کلیدها صادر نشد. لطفا دوباره تلاش کنید.',
           type: cons.status.ERROR,
         });
       }
@@ -82,9 +82,9 @@ function ExportE2ERoomKeys() {
   return (
     <div className="export-e2e-room-keys">
       <form className="export-e2e-room-keys__form" onSubmit={(e) => { e.preventDefault(); exportE2ERoomKeys(); }}>
-        <Input forwardRef={passwordRef} type="password" placeholder="Password" required />
-        <Input forwardRef={confirmPasswordRef} type="password" placeholder="Confirm password" required />
-        <Button disabled={status.isOngoing} variant="primary" type="submit">Export</Button>
+        <Input forwardRef={passwordRef} type="password" placeholder="رمز عبور" required />
+        <Input forwardRef={confirmPasswordRef} type="password" placeholder="تائید رمز عبور" required />
+        <Button disabled={status.isOngoing} variant="primary" type="submit">خروجی</Button>
       </form>
       { status.type === cons.status.IN_FLIGHT && (
         <div className="import-e2e-room-keys__process">
