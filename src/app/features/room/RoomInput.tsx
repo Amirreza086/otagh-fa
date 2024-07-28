@@ -427,9 +427,9 @@ export const RoomInput = forwardRef<HTMLDivElement, RoomInputProps>(
               >
                 <Icon size="600" src={Icons.File} />
                 <Text size="H4" align="Center">
-                  {`Drop Files in "${room?.name || 'Room'}"`}
+                  {`رها کردن فایل ها در "${room?.name || 'اتاق'}"`}
                 </Text>
-                <Text align="Center">Drag and drop files here or click for selection dialog</Text>
+                <Text align="Center">فایل ها را اینجا بکشید و رها کنید یا برای انتخاب کلیک کنید</Text>
               </Box>
             </Dialog>
           </OverlayCenter>
