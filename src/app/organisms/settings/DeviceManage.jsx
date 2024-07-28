@@ -41,15 +41,15 @@ const promptDeviceName = async (deviceName) => new Promise((resolve) => {
       <form className="device-manage__rename" onSubmit={handleSubmit}>
         <Input value={deviceName} label="Session name" name="session" />
         <div className="device-manage__rename-btn">
-          <Button variant="primary" type="submit">Save</Button>
-          <Button onClick={() => onComplete(null)}>Cancel</Button>
+          <Button variant="primary" type="submit">ذخیره</Button>
+          <Button onClick={() => onComplete(null)}>لغو</Button>
         </div>
       </form>
     );
   };
 
   openReusableDialog(
-    <Text variant="s1" weight="medium">Edit session name</Text>,
+    <Text variant="s1" weight="medium">ویرایش نام جلسه</Text>,
     (requestClose) => renderContent((name) => {
       isCompleted = true;
       resolve(name);
@@ -91,7 +91,7 @@ function DeviceManage() {
       <div className="device-manage">
         <div className="device-manage__loading">
           <Spinner size="small" />
-          <Text>Loading sessions...</Text>
+          <Text>بارگزاری جلسات...</Text>
         </div>
       </div>
     );
@@ -114,9 +114,9 @@ function DeviceManage() {
 
   const handleRemove = async (device) => {
     const isConfirmed = await confirmDialog(
-      `Logout ${device.display_name}`,
-      `You are about to logout "${device.display_name}" session.`,
-      'Logout',
+      `خارج شدن ${device.display_name}`,
+      `داری خارج میشی از "${device.display_name}" جلسه.`,
+      'خارج شدن',
       'danger',
     );
     if (!isConfirmed) return;
@@ -164,7 +164,7 @@ function DeviceManage() {
           <Text style={{ color: isVerified !== false ? '' : 'var(--tc-danger-high)' }}>
             {displayName}
             <Text variant="b3" span>{`${displayName ? ' — ' : ''}${deviceId}`}</Text>
-            {isCurrentDevice && <Text span className="device-manage__current-label" variant="b3">Current</Text>}
+            {isCurrentDevice && <Text span className="device-manage__current-label" variant="b3">فعلی</Text>}
           </Text>
         )}
         options={
@@ -172,7 +172,7 @@ function DeviceManage() {
             ? <Spinner size="small" />
             : (
               <>
-                {(isCSEnabled && canVerify) && <Button onClick={() => verify(deviceId, isCurrentDevice)} variant="positive">Verify</Button>}
+                {(isCSEnabled && canVerify) && <Button onClick={() => verify(deviceId, isCurrentDevice)} variant="positive">تائیدیه</Button>}
                 <IconButton size="small" onClick={() => handleRename(device)} src={PencilIC} tooltip="Rename" />
                 <IconButton size="small" onClick={() => handleRemove(device)} src={BinIC} tooltip="Remove session" />
               </>
@@ -182,7 +182,7 @@ function DeviceManage() {
           <>
             {lastTS && (
               <Text variant="b3">
-                Last activity
+                آخرین فعالیت
                 <span style={{ color: 'var(--tc-surface-normal)' }}>
                   {dateFormat(new Date(lastTS), ' hh:MM TT, dd/mm/yyyy')}
                 </span>
@@ -191,7 +191,7 @@ function DeviceManage() {
             )}
             {isCurrentDevice && (
               <Text style={{ marginTop: 'var(--sp-ultra-tight)' }} variant="b3">
-                {`Session Key: ${mx.getDeviceEd25519Key().match(/.{1,4}/g).join(' ')}`}
+                {`کلید جلسه : ${mx.getDeviceEd25519Key().match(/.{1,4}/g).join(' ')}`}
               </Text>
             )}
           </>
@@ -216,14 +216,14 @@ function DeviceManage() {
   return (
     <div className="device-manage">
       <div>
-        <MenuHeader>Unverified sessions</MenuHeader>
+        <MenuHeader>جلسات تایید نشده</MenuHeader>
         {!isMeVerified && isCSEnabled && (
           <div style={{ padding: 'var(--sp-extra-tight) var(--sp-normal)' }}>
             <InfoCard
               rounded
               variant="primary"
               iconSrc={InfoIC}
-              title="Verify this session either with your Security Key/Phrase here or by initiating emoji verification from a verified session."
+              title="این جلسه را با کلید / عبارت امنیتی خود در اینجا تأیید کنید یا با شروع تأیید ایموجی از یک جلسه تأیید شده"
             />
           </div>
         )}
@@ -233,7 +233,7 @@ function DeviceManage() {
               rounded
               variant="surface"
               iconSrc={InfoIC}
-              title="Verify other sessions by emoji verification or remove unfamiliar ones."
+              title="سایر جلسات را با تأیید ایموجی تأیید کنید یا موارد ناآشنا را حذف کنید"
             />
           </div>
         )}
@@ -243,7 +243,7 @@ function DeviceManage() {
               rounded
               variant="caution"
               iconSrc={InfoIC}
-              title="Setup cross signing in case you lose all your sessions."
+              title="در صورت از دست دادن تمام جلسات خود، امضای متقاطع را تنظیم کنید"
             />
           </div>
         )}
@@ -260,22 +260,22 @@ function DeviceManage() {
       </div>
       )}
       <div>
-        <MenuHeader>Verified sessions</MenuHeader>
+        <MenuHeader>جلسات تائید شده</MenuHeader>
         {
           verified.length > 0
             ? verified.map((device, index) => {
               if (truncated && index >= TRUNCATED_COUNT) return null;
               return renderDevice(device, true);
             })
-            : <Text className="device-manage__info">No verified sessions</Text>
+            : <Text className="device-manage__info">جلسات تائید نشده</Text>
         }
         { verified.length > TRUNCATED_COUNT && (
           <Button className="device-manage__info" onClick={() => setTruncated(!truncated)}>
-            {truncated ? `View ${verified.length - 4} more` : 'View less'}
+            {truncated ? `مشاهده ${verified.length - 4} بیشتر` : 'مشاهده کمتر'}
           </Button>
         )}
         { deviceList.length > 0 && (
-          <Text className="device-manage__info" variant="b3">Session names are visible to everyone, so do not put any private info here.</Text>
+          <Text className="device-manage__info" variant="b3">نام جلسات برای همه قابل مشاهده است، بنابراین هیچ اطلاعات خصوصی را در اینجا قرار ندهید</Text>
         )}
       </div>
     </div>
