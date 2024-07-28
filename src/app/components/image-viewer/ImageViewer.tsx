@@ -68,7 +68,7 @@ export const ImageViewer = as<'div', ImageViewerProps>(
               radii="300"
               before={<Icon size="50" src={Icons.Download} />}
             >
-              <Text size="B300">Download</Text>
+              <Text size="B300">دانلود</Text>
             </Chip>
           </Box>
         </Header>
