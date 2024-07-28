@@ -39,7 +39,7 @@ function SecretStorageAccess({ onComplete }) {
 
       if (!mountStore.getItem()) return;
       if (!isCorrect) {
-        setError(`Incorrect Security ${key ? 'Key' : 'Phrase'}`);
+        setError(`Incorrect Security ${key ? 'کلید' : 'عبارت'}`);
         setProcess(false);
         return;
       }
@@ -51,7 +51,7 @@ function SecretStorageAccess({ onComplete }) {
       });
     } catch (e) {
       if (!mountStore.getItem()) return;
-      setError(`Incorrect Security ${key ? 'Key' : 'Phrase'}`);
+      setError(`Incorrect Security ${key ? 'کلید' : 'عبارت'}`);
       setProcess(false);
     }
   };
@@ -76,7 +76,7 @@ function SecretStorageAccess({ onComplete }) {
       <form onSubmit={handleForm}>
         <Input
           name="password"
-          label={`Security ${withPhrase ? 'Phrase' : 'Key'}`}
+          label={`Security ${withPhrase ? 'عبارت' : 'کلید'}`}
           type="password"
           onChange={handleChange}
           required
@@ -84,8 +84,8 @@ function SecretStorageAccess({ onComplete }) {
         {error && <Text variant="b3">{error}</Text>}
         {!process && (
           <div className="secret-storage-access__btn">
-            <Button variant="primary" type="submit">Continue</Button>
-            {isPassphrase && <Button onClick={toggleWithPhrase}>{`Use Security ${withPhrase ? 'Key' : 'Phrase'}`}</Button>}
+            <Button variant="primary" type="submit">ادامه</Button>
+            {isPassphrase && <Button onClick={toggleWithPhrase}>{`Use Security ${withPhrase ? 'کلید' : 'عبارت'}`}</Button>}
           </div>
         )}
       </form>
