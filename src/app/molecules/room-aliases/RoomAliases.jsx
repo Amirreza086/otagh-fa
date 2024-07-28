@@ -71,7 +71,7 @@ function useValidate(hsString) {
         return {
           alias,
           status: isValid ? cons.status.SUCCESS : cons.status.ERROR,
-          msg: معتبر است ? `${alias} موجود است.` : `${alias} در حال حاضر در حال استفاده است.`,
+          msg: isValid ? `${alias} موجود است.` : `${alias} در حال حاضر در حال استفاده است.`,
         };
       });
     }, 600)();
