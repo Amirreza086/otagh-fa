@@ -56,7 +56,7 @@ export function Login() {
   return (
     <Box direction="Column" gap="500">
       <Text size="H2" priority="400">
-        Login
+        وارد شدن
       </Text>
       {parsedFlows.token && loginSearchParams.loginToken && (
         <TokenLogin token={loginSearchParams.loginToken} />
@@ -86,13 +86,13 @@ export function Login() {
       {!parsedFlows.password && !parsedFlows.sso && (
         <>
           <Text style={{ color: color.Critical.Main }}>
-            {`This client does not support login on "${server}" homeserver. Password and SSO based login method not found.`}
+            {`این کلاینت از ورود به سیستم پشتیبانی نمی کند "${server}" سرور خانه روش ورود مبتنی بر رمز عبور و SSO یافت نشد.`}
           </Text>
           <span data-spacing-node />
         </>
       )}
       <Text align="Center">
-        Do not have an account? <Link to={getRegisterPath(server)}>Register</Link>
+        آیا اکانت ندارید؟ <Link to={getRegisterPath(server)}>ثبت نام کنید</Link>
       </Text>
     </Box>
   );
