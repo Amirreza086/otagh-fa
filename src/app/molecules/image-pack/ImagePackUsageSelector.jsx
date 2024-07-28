@@ -7,27 +7,27 @@ import CheckIC from '../../../../public/res/ic/outlined/check.svg';
 function ImagePackUsageSelector({ usage, onSelect }) {
   return (
     <div>
-      <MenuHeader>Usage</MenuHeader>
+      <MenuHeader>کاربردی</MenuHeader>
       <MenuItem
         iconSrc={usage === 'emoticon' ? CheckIC : undefined}
         variant={usage === 'emoticon' ? 'positive' : 'surface'}
         onClick={() => onSelect('emoticon')}
       >
-        Emoji
+        ایموجی
       </MenuItem>
       <MenuItem
         iconSrc={usage === 'sticker' ? CheckIC : undefined}
         variant={usage === 'sticker' ? 'positive' : 'surface'}
         onClick={() => onSelect('sticker')}
       >
-        Sticker
+        استیکر
       </MenuItem>
       <MenuItem
         iconSrc={usage === 'both' ? CheckIC : undefined}
         variant={usage === 'both' ? 'positive' : 'surface'}
         onClick={() => onSelect('both')}
       >
-        Both
+        هر دو
       </MenuItem>
     </div>
   );
