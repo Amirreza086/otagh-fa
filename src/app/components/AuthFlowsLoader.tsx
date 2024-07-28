@@ -33,10 +33,10 @@ export function AuthFlowsLoader({ fallback, error, children }: AuthFlowsLoaderPr
       }
 
       if (!loginFlows) {
-        throw new Error('Missing auth flow!');
+        throw new Error('جریان اعتبار وجود ندارد!');
       }
       if ('errcode' in loginFlows) {
-        throw new Error('Failed to load auth flow!');
+        throw new Error('جریان تأیید بارگیری نشد!');
       }
 
       const authFlows: AuthFlows = {
