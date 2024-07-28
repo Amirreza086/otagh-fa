@@ -38,7 +38,7 @@ function useValidate(hsString) {
       setValidate({
         alias: null,
         status: cons.status.ERROR,
-        msg: 'Invalid character: only letter, numbers and _- are allowed.',
+        msg: 'کاراکتر نامعتبر: فقط حرف، اعداد و _- مجاز هستند.',
       });
       return false;
     }
@@ -60,7 +60,7 @@ function useValidate(hsString) {
       setValidate({
         alias,
         status: cons.status.IN_FLIGHT,
-        msg: `validating ${alias}...`,
+        msg: `در حال اعتبارسنجی ${alias}...`,
       });
 
       const isValid = await isRoomAliasAvailable(mx, alias);
@@ -71,7 +71,7 @@ function useValidate(hsString) {
         return {
           alias,
           status: isValid ? cons.status.SUCCESS : cons.status.ERROR,
-          msg: isValid ? `${alias} is available.` : `${alias} is already in use.`,
+          msg: معتبر است ? `${alias} موجود است.` : `${alias} در حال حاضر در حال استفاده است.`,
         };
       });
     }, 600)();
@@ -261,10 +261,10 @@ function RoomAliases({ roomId }) {
 
     return (
       <div className="room-aliases__item-btns">
-        {canPublishAlias && !isMain && <Button onClick={() => handleSetMainAlias(alias)} variant="primary">Set as Main</Button>}
-        {!isPublished && canPublishAlias && <Button onClick={() => handlePublishAlias(alias)} variant="positive">Publish</Button>}
-        {isPublished && canPublishAlias && <Button onClick={() => handleUnPublishAlias(alias)} variant="caution">Un-Publish</Button>}
-        <Button onClick={() => handleDeleteAlias(alias)} variant="danger">Delete</Button>
+        {canPublishAlias && !isMain && <Button onClick={() => handleSetMainAlias(alias)} variant="primary">به عنوان اصلی تنظیم کنید</Button>}
+        {!isPublished && canPublishAlias && <Button onClick={() => handlePublishAlias(alias)} variant="positive">انتشار</Button>}
+        {isPublished && canPublishAlias && <Button onClick={() => handleUnPublishAlias(alias)} variant="caution">عدم انتشار</Button>}
+        <Button onClick={() => handleDeleteAlias(alias)} variant="danger">حذف کردن</Button>
       </div>
     );
   };
@@ -280,7 +280,7 @@ function RoomAliases({ roomId }) {
           <Checkbox variant="positive" disabled={disabled} isActive={isActive} onToggle={() => handleAliasSelect(alias)} />
           <Text>
             {alias}
-            {isMain && <span>Main</span>}
+            {isMain && <span>اصلی</span>}
           </Text>
         </div>
         {isActive && renderAliasBtns(alias)}
@@ -294,8 +294,8 @@ function RoomAliases({ roomId }) {
   return (
     <div className="room-aliases">
       <SettingTile
-        title="Publish to room directory"
-        content={<Text variant="b3">{`Publish this ${room.isSpaceRoom() ? 'space' : 'room'} to the ${hsString}'s public room directory?`}</Text>}
+        title="انتشار در دایرکتوری"
+        content={<Text variant="b3">{`Publish this ${room.isSpaceRoom() ? 'فضا' : 'اتاق'} to the ${hsString}'s دایرکتوری اتاق عمومی؟`}</Text>}
         options={(
           <Toggle
             isActive={isPublic}
@@ -306,35 +306,35 @@ function RoomAliases({ roomId }) {
       />
 
       <div className="room-aliases__content">
-        <MenuHeader>Published addresses</MenuHeader>
-        {(aliases.published.length === 0) && <Text className="room-aliases__message">No published addresses</Text>}
-        {(aliases.published.length > 0 && !aliases.main) && <Text className="room-aliases__message">No Main address (select one from below)</Text>}
+        <MenuHeader>آدرس های انتشار یافته</MenuHeader>
+        {(aliases.published.length === 0) && <Text className="room-aliases__message">هیچ آدرسی انتشار نیافته است</Text>}
+        {(aliases.published.length > 0 && !aliases.main) && <Text className="room-aliases__message">بدون آدرس اصلی (یکی از آنها را انتخاب کنید)</Text>}
         {aliases.published.map(renderAlias)}
         <Text className="room-aliases__message" variant="b3">
-          {`Published addresses can be used by anyone on any server to join your ${room.isSpaceRoom() ? 'space' : 'room'}. To publish an address, it needs to be set as a local address first.`}
+          {`آدرس های منتشر شده می تواند توسط هر کسی در هر سروری برای پیوستن به شما استفاده شود ${room.isSpaceRoom() ? 'فضا' : 'اتاق'}. برای انتشار یک آدرس، ابتدا باید آن را به عنوان یک آدرس محلی تنظیم کنید.`}
         </Text>
       </div>
       { isLocalVisible && (
         <div className="room-aliases__content">
-          <MenuHeader>Local addresses</MenuHeader>
-          {(aliases.local.length === 0) && <Text className="room-aliases__message">No local addresses</Text>}
+          <MenuHeader>آدرس های محلی</MenuHeader>
+          {(aliases.local.length === 0) && <Text className="room-aliases__message">بدون آدرس محلی</Text>}
           {aliases.local.map(renderAlias)}
           <Text className="room-aliases__message" variant="b3">
-            {`Set local addresses for this ${room.isSpaceRoom() ? 'space' : 'room'} so users can find this ${room.isSpaceRoom() ? 'space' : 'room'} through your homeserver.`}
+            {`آدرس های محلی را برای این کار تنظیم کنید ${room.isSpaceRoom() ? 'فضا' : 'اتاق'} بنابراین کاربران می توانند این را ${room.isSpaceRoom() ? 'فضا' : 'اتاق'} از طریق سرور خانگی شما پیدا کنند.`}
           </Text>
 
-          <Text className="room-aliases__form-label" variant="b2">Add local address</Text>
+          <Text className="room-aliases__form-label" variant="b2">اضافه کردن آدرس محلی</Text>
           <form className="room-aliases__form" onSubmit={handleAliasSubmit}>
             <div className="room-aliases__input-wrapper">
               <Input
                 name="alias-input"
                 state={inputState}
                 onChange={handleAliasChange}
-                placeholder={`my_${room.isSpaceRoom() ? 'space' : 'room'}_address`}
+                placeholder={`آدرس_${room.isSpaceRoom() ? 'فضا' : 'اتاق'}_من`}
                 required
               />
             </div>
-            <Button variant="primary" type="submit">Add</Button>
+            <Button variant="primary" type="submit">اضافه کردن</Button>
           </form>
           <div className="room-aliases__input-status">
             {validate.status === cons.status.SUCCESS && <Text className="room-aliases__valid" variant="b2">{validate.msg}</Text>}
@@ -344,7 +344,7 @@ function RoomAliases({ roomId }) {
       )}
       <div className="room-aliases__content">
         <Button onClick={() => setIsLocalVisible(!isLocalVisible)}>
-          {`${isLocalVisible ? 'Hide' : 'Add / View'} local address`}
+          {`${isLocalVisible ? 'مخفی' : 'اضافه کردن / مشاهده'} آدرس محلی`}
         </Button>
       </div>
     </div>
