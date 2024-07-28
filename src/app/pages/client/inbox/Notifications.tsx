@@ -328,7 +328,7 @@ function RoomNotificationsGroupComp({
         return (
           <Box grow="Yes" direction="Column">
             <Text size="T400" priority="300">
-              Room Tombstone. {content.body}
+              سنگ قبر اتاق. {content.body}
             </Text>
           </Box>
         );
@@ -385,7 +385,7 @@ function RoomNotificationsGroupComp({
               onClick={handleMarkAsRead}
               before={<Icon size="100" src={Icons.CheckTwice} />}
             >
-              <Text size="T200">Mark as Read</Text>
+              <Text size="T200">علامت زدن به عنوان خوانده شده</Text>
             </Chip>
           )}
         </Box>
@@ -444,7 +444,7 @@ function RoomNotificationsGroupComp({
                       variant="Secondary"
                       radii="400"
                     >
-                      <Text size="T200">Open</Text>
+                      <Text size="T200">بازکردن</Text>
                     </Chip>
                   </Box>
                 </Box>
@@ -553,7 +553,7 @@ export function Notifications() {
         <Box grow="Yes" justifyContent="Center" alignItems="Center" gap="200">
           <Icon size="400" src={Icons.Message} />
           <Text size="H3" truncate>
-            Notification Messages
+            اعلانات پیام ها
           </Text>
         </Box>
       </PageHeader>
@@ -574,7 +574,7 @@ export function Notifications() {
                       before={!onlyHighlight && <Icon size="100" src={Icons.Check} />}
                       outlined
                     >
-                      <Text size="T200">All Notifications</Text>
+                      <Text size="T200">همه اعلانات</Text>
                     </Chip>
                     <Chip
                       onClick={() => setOnlyHighlighted(true)}
@@ -583,7 +583,7 @@ export function Notifications() {
                       before={onlyHighlight && <Icon size="100" src={Icons.Check} />}
                       outlined
                     >
-                      <Text size="T200">Highlighted</Text>
+                      <Text size="T200">برجسته شده</Text>
                     </Chip>
                   </Box>
                 </Box>
@@ -645,9 +645,9 @@ export function Notifications() {
                       direction="Column"
                       gap="200"
                     >
-                      <Text>No Notifications</Text>
+                      <Text>بدون اعلانات</Text>
                       <Text size="T200">
-                        You don&apos;t have any new notifications to display yet.
+                        شما هنوز هیچ اعلان جدیدی برای نمایش ندارید
                       </Text>
                     </Box>
                   )}
