@@ -79,9 +79,9 @@ function GeneralSettings({ roomId }) {
           variant="danger"
           onClick={async () => {
             const isConfirmed = await confirmDialog(
-              'Leave room',
-              `Are you sure that you want to leave "${room.name}" room?`,
-              'Leave',
+              'ترک کردن اتاق',
+              `مطمئنی که میخوای از این اتاق "${room.name}" بری?`,
+              'ترک کردن',
               'danger'
             );
             if (!isConfirmed) return;
@@ -89,19 +89,19 @@ function GeneralSettings({ roomId }) {
           }}
           iconSrc={LeaveArrowIC}
         >
-          Leave
+          ترک کردن
         </MenuItem>
       </div>
       <div className="room-settings__card">
-        <MenuHeader>Notification (Changing this will only affect you)</MenuHeader>
+        <MenuHeader>اعلان (تغییر این فقط بر شما تأثیر می گذارد)</MenuHeader>
         <RoomNotification roomId={roomId} />
       </div>
       <div className="room-settings__card">
-        <MenuHeader>Room visibility (who can join)</MenuHeader>
+        <MenuHeader>دید اتاق (چه کسانی می توانند بپیوندند)</MenuHeader>
         <RoomVisibility roomId={roomId} />
       </div>
       <div className="room-settings__card">
-        <MenuHeader>Room addresses</MenuHeader>
+        <MenuHeader>آدرس های اتاق</MenuHeader>
         <RoomAliases roomId={roomId} />
       </div>
     </>
@@ -116,11 +116,11 @@ function SecuritySettings({ roomId }) {
   return (
     <>
       <div className="room-settings__card">
-        <MenuHeader>Encryption</MenuHeader>
+        <MenuHeader>رمزنگاری</MenuHeader>
         <RoomEncryption roomId={roomId} />
       </div>
       <div className="room-settings__card">
-        <MenuHeader>Message history visibility</MenuHeader>
+        <MenuHeader>قابلیت مشاهده تاریخچه پیام</MenuHeader>
         <RoomHistoryVisibility roomId={roomId} />
       </div>
     </>
@@ -169,7 +169,7 @@ function RoomSettings() {
       title={
         <Text variant="s1" weight="medium" primary>
           {isOpen && room.name}
-          <span style={{ color: 'var(--tc-surface-low)' }}> — room settings</span>
+          <span style={{ color: 'var(--tc-surface-low)' }}> — تنظیمات اتاق</span>
         </Text>
       }
       contentOptions={<IconButton src={CrossIC} onClick={requestClose} tooltip="Close" />}
