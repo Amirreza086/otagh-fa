@@ -16,7 +16,7 @@ export function ThumbnailContent({ info, renderImage }: ThumbnailContentProps) {
       const thumbInfo = info.thumbnail_info;
       const thumbMxcUrl = info.thumbnail_file?.url ?? info.thumbnail_url;
       if (typeof thumbMxcUrl !== 'string' || typeof thumbInfo?.mimetype !== 'string') {
-        throw new Error('Failed to load thumbnail');
+        throw new Error('پیش نمایش بارگیری نشد!');
       }
       return getFileSrcUrl(
         mx.mxcUrlToHttp(thumbMxcUrl) ?? '',
