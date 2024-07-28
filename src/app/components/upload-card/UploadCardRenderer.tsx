@@ -48,7 +48,7 @@ export function UploadCardRenderer({
               radii="Pill"
               outlined
             >
-              <Text size="B300">Retry</Text>
+              <Text size="B300">تلاش دوباره</Text>
             </Chip>
           )}
           <IconButton
