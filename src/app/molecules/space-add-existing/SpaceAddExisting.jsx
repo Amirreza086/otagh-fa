@@ -65,7 +65,7 @@ function SpaceAddExistingContent({ roomId, spaces: onlySpaces }) {
   };
 
   const handleAdd = async () => {
-    setProcess(`Adding ${selected.length} items...`);
+    setProcess(`در حال اضافه کردن ${selected.length} موارد...`);
 
     const promises = selected.map((rId) => {
       const room = mx.getRoom(rId);
@@ -130,10 +130,10 @@ function SpaceAddExistingContent({ roomId, spaces: onlySpaces }) {
         }}
       >
         <RawIcon size="small" src={SearchIC} />
-        <Input name="searchInput" onChange={handleSearch} placeholder="Search room" autoFocus />
+        <Input name="searchInput" onChange={handleSearch} placeholder="جستوجوی اتاق" autoFocus />
         <IconButton size="small" type="button" onClick={handleSearchClear} src={CrossIC} />
       </form>
-      {searchIds?.length === 0 && <Text>No results found</Text>}
+      {searchIds?.length === 0 && <Text>نتیجه ای پیدا نشد</Text>}
       {(searchIds || allRoomIds).map((rId) => {
         const room = mx.getRoom(rId);
         let imageSrc =
@@ -180,7 +180,7 @@ function SpaceAddExistingContent({ roomId, spaces: onlySpaces }) {
           <Text weight="medium">{process || `${selected.length} item selected`}</Text>
           {!process && (
             <Button onClick={handleAdd} variant="primary">
-              Add
+              اضافه کردن
             </Button>
           )}
         </div>
@@ -227,7 +227,7 @@ function SpaceAddExisting() {
           {room && room.name}
           <span style={{ color: 'var(--tc-surface-low)' }}>
             {' '}
-            — add existing {data?.spaces ? 'spaces' : 'rooms'}
+            — اضافه کردن موجودی {data?.spaces ? 'spaces' : 'اتاق ها'}
           </span>
         </Text>
       }
