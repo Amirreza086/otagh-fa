@@ -94,14 +94,14 @@ function EmojiVerificationContent({ data, requestClose }) {
   const renderWait = () => (
     <>
       <Spinner size="small" />
-      <Text>Waiting for response from other device...</Text>
+      <Text>در انتظار پاسخ از دستگاه دیگر...</Text>
     </>
   );
 
   if (sas !== null) {
     return (
       <div className="emoji-verification__content">
-        <Text>Confirm the emoji below are displayed on both devices, in the same order:</Text>
+        <Text>تأیید کنید که ایموجی زیر در هر دو دستگاه به یک ترتیب نمایش داده می شود:</Text>
         <div className="emoji-verification__emojis">
           {sas.sas.emoji.map((emoji, i) => (
             // eslint-disable-next-line react/no-array-index-key
@@ -117,7 +117,7 @@ function EmojiVerificationContent({ data, requestClose }) {
           ) : (
             <>
               <Button variant="primary" onClick={sasConfirm}>
-                They match
+                مطابقت دارند
               </Button>
               <Button onClick={sasMismatch}>No match</Button>
             </>
@@ -130,7 +130,7 @@ function EmojiVerificationContent({ data, requestClose }) {
   if (targetDevice) {
     return (
       <div className="emoji-verification__content">
-        <Text>Please accept the request from other device.</Text>
+        <Text>لطفاً درخواست دستگاه دیگر را بپذیرید.</Text>
         <div className="emoji-verification__buttons">{renderWait()}</div>
       </div>
     );
@@ -138,13 +138,13 @@ function EmojiVerificationContent({ data, requestClose }) {
 
   return (
     <div className="emoji-verification__content">
-      <Text>Click accept to start the verification process.</Text>
+      <Text>برای شروع فرآیند تأیید، روی پذیرش کلیک کنید.</Text>
       <div className="emoji-verification__buttons">
         {process ? (
           renderWait()
         ) : (
           <Button variant="primary" onClick={beginVerification}>
-            Accept
+            پذیرش
           </Button>
         )}
       </div>
@@ -186,7 +186,7 @@ function EmojiVerification() {
       className="emoji-verification"
       title={
         <Text variant="s1" weight="medium" primary>
-          Emoji verification
+          تائیدیه ایموجی
         </Text>
       }
       contentOptions={<IconButton src={CrossIC} onClick={requestClose} tooltip="Close" />}
