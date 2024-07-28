@@ -1,3 +1,4 @@
+// Note: protocol message application(danger)
 import HashIC from '../../public/res/ic/outlined/hash.svg';
 import HashGlobeIC from '../../public/res/ic/outlined/hash-globe.svg';
 import HashLockIC from '../../public/res/ic/outlined/hash-lock.svg';
