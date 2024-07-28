@@ -79,7 +79,7 @@ export function AfterItemDropTarget({
   useEffect(() => {
     const target = targetRef.current;
     if (!target) {
-      throw Error('drop target ref is not set properly');
+      throw Error('drop target ref به درستی تنظیم نشده است');
     }
 
     return dropTargetForElements({
@@ -126,7 +126,7 @@ export const useDnDMonitor = (
   useEffect(() => {
     const scrollElement = scrollRef.current;
     if (!scrollElement) {
-      throw Error('Scroll element ref not configured');
+      throw Error('پیمایش عنصر ref پیکربندی نشده است');
     }
 
     return combine(
