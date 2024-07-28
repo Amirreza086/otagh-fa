@@ -32,14 +32,14 @@ export function FeaturedRooms() {
                 <PageHeroSection>
                   <PageHero
                     icon={<Icon size="600" src={Icons.Bulb} />}
-                    title="Featured by Client"
-                    subTitle="Find and explore public rooms and spaces featured by client provider."
+                    title="ویژه توسط کلاینت"
+                    subTitle="اتاق‌ها و فضاهای عمومی را که توسط ارائه‌دهنده مشتری ارائه می‌شود، پیدا و کاوش کنید."
                   />
                 </PageHeroSection>
                 <Box direction="Column" gap="700">
                   {spaces && spaces.length > 0 && (
                     <Box direction="Column" gap="400">
-                      <Text size="H4">Featured Spaces</Text>
+                      <Text size="H4">فضاهای ویژه</Text>
                       <RoomCardGrid>
                         {spaces.map((roomIdOrAlias) => (
                           <RoomSummaryLoader key={roomIdOrAlias} roomIdOrAlias={roomIdOrAlias}>
@@ -68,7 +68,7 @@ export function FeaturedRooms() {
                   )}
                   {rooms && rooms.length > 0 && (
                     <Box direction="Column" gap="400">
-                      <Text size="H4">Featured Rooms</Text>
+                      <Text size="H4">اتاق های ویژه</Text>
                       <RoomCardGrid>
                         {rooms.map((roomIdOrAlias) => (
                           <RoomSummaryLoader key={roomIdOrAlias} roomIdOrAlias={roomIdOrAlias}>
@@ -106,7 +106,7 @@ export function FeaturedRooms() {
                     >
                       <Icon size="400" src={Icons.Info} />
                       <Text size="T300" align="Center">
-                        No rooms or spaces featured by client provider.
+                        هیچ اتاق یا فضایی توسط ارائه دهنده مشتری ارائه نشده است
                       </Text>
                     </Box>
                   )}
