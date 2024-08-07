@@ -61,7 +61,7 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
     let topic = target.topic.value;
     if (topic.trim() === '') topic = undefined;
     let roomAlias;
-    if (joinRule === 'public') {
+    if (joinRule === 'عمومی') {
       roomAlias = addressRef?.current?.value;
       if (roomAlias.trim() === '') roomAlias = undefined;
     }
@@ -74,7 +74,7 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
         topic,
         joinRule,
         alias: roomAlias,
-        isEncrypted: isSpace || joinRule === 'public' ? false : isEncrypted,
+        isEncrypted: isSpace || joinRule === 'عمومی' ? false : isEncrypted,
         powerLevel,
         isSpace,
         parentId,
@@ -90,11 +90,11 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
         navigateRoom(data.room_id);
       }
     } catch (e) {
-      if (e.message === 'M_UNKNOWN: نویسه‌های نامعتبر در نام مستعار اتاق') {
-        setCreatingError('ERROR: نویسه های نامعتبر در آدرس');
+      if (e.message === 'خطا : نویسه‌های نامعتبر در نام مستعار اتاق') {
+        setCreatingError('اخطار : نویسه های نامعتبر در آدرس');
         setIsValidAddress(false);
-      } else if (e.message === 'M_ROOM_IN_USE: نام مستعار اتاق قبلاً گرفته شده است') {
-        setCreatingError('ERROR: این آدرس در حال حاضر در حال استفاده است');
+      } else if (e.message === 'خطا : نام مستعار اتاق قبلاً گرفته شده است') {
+        setCreatingError('اخطار : این آدرس در حال حاضر در حال استفاده است');
         setIsValidAddress(false);
       } else setCreatingError(e.message);
       setIsCreatingRoom(false);
@@ -121,8 +121,8 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
     }, 1000);
   };
 
-  const joinRules = ['invite', 'restricted', 'public'];
-  const joinRuleShortText = ['Private', 'Restricted', 'Public'];
+  const joinRules = ['invite', 'محدود شده', 'public'];
+  const joinRuleShortText = ['دعوت', 'محدود شده', 'عمومی'];
   const joinRuleText = [
     'خصوصی (فقط دعوت)',
     'محدود شده (عضو فضا می تواند بپیوندد)',
@@ -133,7 +133,7 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
   const handleJoinRule = (evt) => {
     openReusableContextMenu('bottom', getEventCords(evt, '.btn-surface'), (closeMenu) => (
       <>
-        <MenuHeader>Visibility (who can join)</MenuHeader>
+        <MenuHeader>اختیار (نحوه پیوستن)</MenuHeader>
         {joinRules.map((rule) => (
           <MenuItem
             key={rule}
@@ -158,7 +158,7 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
     <div className="create-room">
       <form className="create-room__form" onSubmit={handleSubmit}>
         <SettingTile
-          title="Visibility"
+          title="اختیار"
           options={
             <Button onClick={handleJoinRule} iconSrc={ChevronBottomIC}>
               {joinRuleShortText[joinRules.indexOf(joinRule)]}
@@ -180,7 +180,7 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
                 onChange={validateAddress}
                 state={isValidAddress === false ? 'error' : 'normal'}
                 forwardRef={addressRef}
-                placeholder="my_address"
+                placeholder="آدرس_من"
                 required
               />
               <Text variant="b1">{`:${userHs}`}</Text>
@@ -196,7 +196,7 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
         )}
         {!isSpace && joinRule !== 'public' && (
           <SettingTile
-            title="Enable end-to-end encryption"
+            title="رمزگذاری سرتاسر را فعال کنید"
             options={<Toggle isActive={isEncrypted} onToggle={setIsEncrypted} />}
             content={
               <Text variant="b3">
@@ -206,7 +206,7 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
           />
         )}
         <SettingTile
-          title="Select your role"
+          title="نقش خود را انتخاب کنید"
           options={
             <SegmentControl
               selected={roleIndex}
@@ -215,7 +215,7 @@ function CreateRoomContent({ isSpace, parentId, onRequestClose }) {
             />
           }
           content={
-            <Text variant="b3">انتخاب مدیر 100 سطح قدرت را تنظیم می کند در حالی که موسس 101 را تنظیم می کند.</Text>
+            <Text variant="b3">انتخاب مدیر 100 سطح قدرت را تنظیم می کند در حالی که موسس 200 سطح قدرت را تنظیم می کند.</Text>
           }
         />
         <Input name="topic" minHeight={174} resizable label="Topic (optional)" />
