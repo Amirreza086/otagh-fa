@@ -109,15 +109,15 @@ function AppearanceSection() {
           content={<Text variant="b3">بر اساس تنظیمات سیستم از حالت روشن یا تاریک استفاده کنید</Text>}
         />
         <SettingTile
-          title="Theme"
+          title="ظاهری"
           content={
             <SegmentedControls
               selected={settings.useSystemTheme ? -1 : settings.getThemeIndex()}
               segments={[
-                { text: 'Light' },
-                { text: 'Silver' },
-                { text: 'Dark' },
-                { text: 'Butter' },
+                { text: 'روشن' },
+                { text: 'نقره‌ای' },
+                { text: 'تاریک' },
+                { text: 'زرد تاریک' },
               ]}
               onSelect={(index) => {
                 if (settings.useSystemTheme) toggleSystemTheme();
@@ -285,13 +285,13 @@ function NotificationsSection() {
     if (window.Notification === undefined) {
       return (
         <Text className="settings-notifications__not-supported">
-          Not supported in this browser.
+          در مرورگر شما پشتیبانی نمیشود.
         </Text>
       );
     }
 
     if (notifPermission === 'denied') {
-      return <Text>Permission Denied</Text>;
+      return <Text>مجوز رد شد</Text>;
     }
 
     if (notifPermission === 'granted') {
@@ -540,11 +540,11 @@ function AboutSection() {
 }
 
 export const tabText = {
-  APPEARANCE: 'Appearance',
-  NOTIFICATIONS: 'Notifications',
-  EMOJI: 'Emoji',
-  SECURITY: 'Security',
-  ABOUT: 'About',
+  APPEARANCE: 'ظاهر',
+  NOTIFICATIONS: 'اعلانات',
+  EMOJI: 'ایموجی',
+  SECURITY: 'امنیت',
+  ABOUT: 'درباره',
 };
 const tabItems = [
   {
