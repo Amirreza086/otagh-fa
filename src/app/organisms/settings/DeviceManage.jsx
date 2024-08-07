@@ -250,12 +250,12 @@ function DeviceManage() {
         {
           unverified.length > 0
             ? unverified.map((device) => renderDevice(device, false))
-            : <Text className="device-manage__info">No unverified sessions</Text>
+            : <Text className="device-manage__info">هیچ جلسه تایید نشده ای وجود ندارد</Text>
         }
       </div>
       {noEncryption.length > 0 && (
       <div>
-        <MenuHeader>Sessions without encryption support</MenuHeader>
+        <MenuHeader>جلسات بدون پشتیبانی از رمزگذاری</MenuHeader>
         {noEncryption.map((device) => renderDevice(device, null))}
       </div>
       )}
