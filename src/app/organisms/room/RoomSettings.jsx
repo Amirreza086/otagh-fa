@@ -32,11 +32,11 @@ import IconButton from '../../atoms/button/IconButton';
 import { useMatrixClient } from '../../hooks/useMatrixClient';
 
 const tabText = {
-  GENERAL: 'General',
-  MEMBERS: 'Members',
-  EMOJIS: 'Emojis',
-  PERMISSIONS: 'Permissions',
-  SECURITY: 'Security',
+  GENERAL: 'اصلی',
+  MEMBERS: 'کاربران',
+  EMOJIS: 'ایموجی‌ها',
+  PERMISSIONS: 'مجوزها',
+  SECURITY: 'امنیت',
 };
 
 const tabItems = [
@@ -74,7 +74,7 @@ function GeneralSettings({ roomId }) {
   return (
     <>
       <div className="room-settings__card">
-        <MenuHeader>Options</MenuHeader>
+        <MenuHeader>اختیارات</MenuHeader>
         <MenuItem
           variant="danger"
           onClick={async () => {
@@ -97,7 +97,7 @@ function GeneralSettings({ roomId }) {
         <RoomNotification roomId={roomId} />
       </div>
       <div className="room-settings__card">
-        <MenuHeader>دید اتاق (چه کسانی می توانند بپیوندند)</MenuHeader>
+        <MenuHeader>اختیار اتاق (چه کسانی می توانند بپیوندند)</MenuHeader>
         <RoomVisibility roomId={roomId} />
       </div>
       <div className="room-settings__card">
