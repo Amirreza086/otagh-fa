@@ -28,10 +28,10 @@ import { confirmDialog } from '../../molecules/confirm-dialog/ConfirmDialog';
 import { useMatrixClient } from '../../hooks/useMatrixClient';
 
 const tabText = {
-  GENERAL: 'General',
-  MEMBERS: 'Members',
-  EMOJIS: 'Emojis',
-  PERMISSIONS: 'Permissions',
+  GENERAL: 'اصلی',
+  MEMBERS: 'کاربران',
+  EMOJIS: 'ایموجی‌ها',
+  PERMISSIONS: 'مجوزها',
 };
 
 const tabItems = [
