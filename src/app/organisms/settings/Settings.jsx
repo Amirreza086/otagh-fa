@@ -165,7 +165,7 @@ function AppearanceSection() {
           content={
             <SegmentedControls
               selected={messageLayout}
-              segments={[{ text: 'Modern' }, { text: 'Compact' }, { text: 'Bubble' }]}
+              segments={[{ text: 'مدرن' }, { text: 'فشرده' }, { text: 'حبابی' }]}
               onSelect={(index) => setMessageLayout(index)}
             />
           }
@@ -190,7 +190,7 @@ function AppearanceSection() {
           }
         />
         <SettingTile
-          title="از ENTER برای Newline استفاده کنید"
+          title="از ENTER برای خط جدید استفاده کنید"
           options={
             <Toggle
               isActive={enterForNewline}
