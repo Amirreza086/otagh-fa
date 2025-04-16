@@ -410,13 +410,13 @@ function AboutSection() {
           <img width="60" height="60" src={CinnySVG} alt="Otagh logo" />
           <div>
             <Text variant="h2" weight="medium">
-              پیام رسان اتاق
+              پیام رسان غیرمتمرکز پرنده مقاومت
               <span
                 className="text text-b3"
                 style={{ margin: '0 var(--sp-extra-tight)' }}
               >{`v${cons.version}`}</span>
             </Text>
-            <Text>پیام رسانی امن، غیرمتمرکز و سریع بر پایه بلاکچین جهت یک تجربه خوب پیام رسانی امن و سریع.</Text>
+            <Text>پیام رسانی امن، غیرمتمرکز و سریع بر پایه بلاکچین جهت یک تجربه خوب پیام رسانی امن و سریع برای آزادی بیان جبهه مقاومت و مظلومان جهان</Text>
             <br></br>
             <Text>ساخته شده توسط امیررضا اسکندرزاده</Text>
 
@@ -611,7 +611,7 @@ function Settings() {
         'خارج شدن',
         'آیا مطمئن هستید که می خواهید از جلسه خود خارج شوید؟',
         'خارج شدن',
-        'danger'
+        'اخطار'
       )
     ) {
       logoutClient(mx);
