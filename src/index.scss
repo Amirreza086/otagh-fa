@@ -1,6 +1,13 @@
 @use './app/partials/screen';
 
 @font-face {
+  font-family: Vazir;
+  src: url('../public/font/Vazir.woff2'),
+    url('../public/font/Vazir.ttf');
+  font-display: swap;
+}
+
+@font-face {
   font-family: Twemoji;
   src: url('../public/font/Twemoji.Mozilla.v.7.0.woff2'),
     url('../public/font/Twemoji.Mozilla.v0.7.0.ttf');
