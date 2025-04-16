@@ -30,7 +30,7 @@ export function SidebarNav() {
             <SidebarStack>
               <ExploreTab />
               <SidebarItem>
-                <SidebarItemTooltip tooltip="Create Space">
+                <SidebarItemTooltip tooltip="ساخت فضا">
                   {(triggerRef) => (
                     <SidebarAvatar
                       as="button"
@@ -51,7 +51,7 @@ export function SidebarNav() {
             <SidebarStackSeparator />
             <SidebarStack>
               <SidebarItem>
-                <SidebarItemTooltip tooltip="Search">
+                <SidebarItemTooltip tooltip="جست و جو">
                   {(triggerRef) => (
                     <SidebarAvatar
                       as="button"
