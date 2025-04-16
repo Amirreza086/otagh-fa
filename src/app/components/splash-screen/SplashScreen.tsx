@@ -21,7 +21,7 @@ export function SplashScreen({ children }: SplashScreenProps) {
         justifyContent="Center"
       >
         <Text size="H2" align="Center">
-          پیام رسان اتاق
+          پیام رسان پرنده مقاومت
         </Text>
       </Box>
     </Box>
