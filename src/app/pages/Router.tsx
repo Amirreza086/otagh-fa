@@ -133,8 +133,8 @@ export const createRouter = (clientConfig: ClientConfig, screenSize: ScreenSize)
           }
         >
           {mobile ? null : <Route index element={<WelcomePage />} />}
-          <Route path={_CREATE_PATH} element={<p>create</p>} />
-          <Route path={_JOIN_PATH} element={<p>join</p>} />
+          <Route path={_CREATE_PATH} element={<p>ساختن</p>} />
+          <Route path={_JOIN_PATH} element={<p>پیوستن</p>} />
           <Route path={_SEARCH_PATH} element={<HomeSearch />} />
           <Route
             path={_ROOM_PATH}
@@ -160,7 +160,7 @@ export const createRouter = (clientConfig: ClientConfig, screenSize: ScreenSize)
           }
         >
           {mobile ? null : <Route index element={<WelcomePage />} />}
-          <Route path={_CREATE_PATH} element={<p>create</p>} />
+          <Route path={_CREATE_PATH} element={<p>ساختن</p>} />
           <Route
             path={_ROOM_PATH}
             element={
