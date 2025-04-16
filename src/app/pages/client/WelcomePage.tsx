@@ -15,10 +15,10 @@ export function WelcomePage() {
         <PageHeroSection>
           <PageHero
             icon={<img width="70" height="70" src={CinnySVG} alt="Cinny Logo" />}
-            title="به پیام رسان اتاق خوش آمدید"
+            title="به پیام رسان پرنده مقاومت خوش آمدید"
             subTitle={
               <span>
-                پیام رسانی غیرمتمرکز ، امن و بر پایه بستر بلاکچین
+                پیام رسانی غیرمتمرکز ، امن و بر پایه بستر بلاکچین برای آزادی گفتار جبهه مقاومت و مظلومان جهان
                 <br></br>
                 برنامه نویسی توسط امیررضا اسکندرزاده.
               </span>
